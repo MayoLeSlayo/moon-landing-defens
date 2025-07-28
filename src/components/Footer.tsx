@@ -7,7 +7,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Moon Landing Defense</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              An evidence-based knowledge base dedicated to preserving the truth about humanity's greatest achievement - landing on the moon.
+              An evidence-based knowledge base dedicated to preserving the truth about humanity&apos;s greatest achievement - landing on the moon.
             </p>
           </div>
 
