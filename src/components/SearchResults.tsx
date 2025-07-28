@@ -62,7 +62,7 @@ export default function SearchResults({ results }: SearchResultsProps) {
                     </h3>
                     <div className="conspiracy-highlight mb-3">
                       <p className="text-gray-700 italic">
-                        <strong>Claim:</strong> "{result.conspiracy.claim}"
+                        <strong>Claim:</strong> &quot;{result.conspiracy.claim}&quot;
                       </p>
                     </div>
                   </div>
@@ -162,7 +162,7 @@ export default function SearchResults({ results }: SearchResultsProps) {
                   <h5 className="text-sm font-semibold text-gray-700 mb-2">Common Variations:</h5>
                   <ul className="text-sm text-gray-600 space-y-1">
                     {result.conspiracy.commonVariations.slice(0, 3).map((variation, index) => (
-                      <li key={index} className="italic">• "{variation}"</li>
+                      <li key={index} className="italic">• &quot;{variation}&quot;</li>
                     ))}
                   </ul>
                 </div>

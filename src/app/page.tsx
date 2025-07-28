@@ -134,7 +134,7 @@ export default function HomePage() {
                       }}
                       className="bg-apollo-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                     >
-                      Search "{term}"
+                      Search &quot;{term}&quot;
                     </button>
                   ))}
                 </div>

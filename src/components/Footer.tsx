@@ -91,7 +91,7 @@ export default function Footer() {
             © 2024 Moon Landing Defense System. Dedicated to scientific truth and education.
           </p>
           <p className="text-gray-400 text-xs mt-2">
-            "That's one small step for man, one giant leap for mankind." - Neil Armstrong, July 20, 1969
+            &quot;That&apos;s one small step for man, one giant leap for mankind.&quot; - Neil Armstrong, July 20, 1969
           </p>
         </div>
       </div>

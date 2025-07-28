@@ -77,7 +77,7 @@ export default function EvidencePage() {
                         {conspiracy.title}
                       </h3>
                       <p className="text-gray-600 mb-3 italic">
-                        "{conspiracy.claim}"
+                        &quot;{conspiracy.claim}&quot;
                       </p>
                       
                       {/* Tags */}
@@ -116,7 +116,7 @@ export default function EvidencePage() {
                       <p className="text-sm font-medium text-gray-700 mb-2">Common variations:</p>
                       <ul className="text-sm text-gray-600 space-y-1">
                         {conspiracy.commonVariations.slice(0, 2).map((variation, index) => (
-                          <li key={index} className="italic">• "{variation}"</li>
+                          <li key={index} className="italic">• &quot;{variation}&quot;</li>
                         ))}
                       </ul>
                     </div>
