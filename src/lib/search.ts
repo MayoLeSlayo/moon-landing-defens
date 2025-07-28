@@ -44,7 +44,7 @@ export class SearchEngine {
           conspiracy,
           responses: relatedResponses,
           relevanceScore,
-          matchedKeywords: [...new Set(matchedKeywords)] // Remove duplicates
+          matchedKeywords: Array.from(new Set(matchedKeywords)) // Remove duplicates
         });
       }
     });
@@ -101,7 +101,7 @@ export class SearchEngine {
             conspiracy,
             responses: relatedResponses,
             relevanceScore,
-            matchedKeywords: [...new Set(matchedKeywords)]
+            matchedKeywords: Array.from(new Set(matchedKeywords))
           });
         }
       });
