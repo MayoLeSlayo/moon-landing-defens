@@ -157,6 +157,7 @@ export const conspiracyTheories: ConspiracyTheory[] = [
 ];
 
 export const evidenceResponses: EvidenceResponse[] = [
+  // Waving Flag responses
   {
     id: 'waving-flag-short',
     conspiracyId: 'waving-flag',
@@ -176,6 +177,17 @@ export const evidenceResponses: EvidenceResponse[] = [
     lastUpdated: new Date('2024-01-01')
   },
   {
+    id: 'waving-flag-educational',
+    conspiracyId: 'waving-flag',
+    responseType: 'educational',
+    content: 'The American flag on the moon demonstrates perfect physics for a vacuum environment. Understanding this requires knowledge of atmospheric science: Earth\'s atmosphere creates air currents that cause flags to flutter, but the moon has no atmosphere (less than 1 trillionth of Earth\'s atmospheric pressure). The flag assembly included a horizontal telescoping rod specifically designed to keep the flag extended for photographs. When astronauts inserted the flagpole and adjusted the horizontal rod, the flag moved due to their physical manipulation. Once they stopped touching it, the flag remained completely motionless - exactly what physics predicts in a vacuum. The wrinkles and folds visible in photographs are permanent creases from the flag being folded and stored during the journey. This behavior would be impossible to replicate in an Earth-based studio where atmospheric pressure and air currents would cause constant subtle movement.',
+    scientificSources: [sources[0], sources[1], sources[3]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+
+  // No Stars responses  
+  {
     id: 'no-stars-short',
     conspiracyId: 'no-stars',
     responseType: 'short',
@@ -184,6 +196,26 @@ export const evidenceResponses: EvidenceResponse[] = [
     effectiveness: 8,
     lastUpdated: new Date('2024-01-01')
   },
+  {
+    id: 'no-stars-comprehensive',
+    conspiracyId: 'no-stars',
+    responseType: 'comprehensive',
+    content: 'The "no stars" conspiracy theory misunderstands basic photography principles. The lunar surface is extremely bright - comparable to snow on a sunny day - because it\'s directly illuminated by unfiltered sunlight (no atmosphere to dim it). To photograph these bright subjects (astronauts and lunar surface), cameras must use fast shutter speeds and small apertures, which makes dim background stars invisible. This is identical to trying to photograph stars with your phone while standing under a bright streetlight - the bright foreground washes out the dim background. The "what it should look like" images showing stars are digitally manipulated composites combining two different exposures that 1960s cameras couldn\'t capture simultaneously. Modern space photography from the ISS and SpaceX missions shows the exact same phenomenon.',
+    scientificSources: [sources[5]],
+    effectiveness: 9,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'no-stars-educational',
+    conspiracyId: 'no-stars',
+    responseType: 'educational',
+    content: 'This phenomenon demonstrates the inverse square law of light and camera exposure principles. Stars appear dim because they\'re incredibly distant light sources, while the lunar surface appears bright due to direct solar illumination at 1 AU (astronomical unit). Camera sensors can only capture a limited dynamic range - the ratio between the brightest and darkest areas in a single exposure. In lunar photography, the brightness difference between sunlit surfaces and background stars exceeds this dynamic range by several orders of magnitude. Professional photographers today use HDR (High Dynamic Range) techniques or composite multiple exposures to capture both bright and dim subjects simultaneously - technology unavailable in 1969. The Apollo cameras were optimized for documenting the mission, not astrophotography. This same principle explains why you can\'t see stars in daytime on Earth despite them being there - the bright blue sky (scattered sunlight) overwhelms the dim starlight.',
+    scientificSources: [sources[5]],
+    effectiveness: 9,
+    lastUpdated: new Date('2024-01-01')
+  },
+
+  // Van Allen Belt responses
   {
     id: 'van-allen-short',
     conspiracyId: 'van-allen-belt',
@@ -194,12 +226,50 @@ export const evidenceResponses: EvidenceResponse[] = [
     lastUpdated: new Date('2024-01-01')
   },
   {
+    id: 'van-allen-comprehensive',
+    conspiracyId: 'van-allen-belt',
+    responseType: 'comprehensive',
+    content: 'The Van Allen Belt radiation argument demonstrates a fundamental misunderstanding of radiation physics and dosage. The Apollo missions spent approximately 1 hour total passing through the belts and received roughly 11.4 rems of radiation - equivalent to several medical X-rays or a CT scan. The "deadly radiation" myth comes from conflating radiation intensity with total dosage over time. The Van Allen belts are dangerous for PROLONGED exposure (like if astronauts lived there for months), but a quick pass-through with proper trajectory planning and spacecraft shielding is entirely manageable. NASA carefully planned flight paths to minimize exposure and the Command Module\'s hull provided radiation shielding. This isn\'t speculation - radiation exposure is precisely measured on every space mission, and ISS astronauts deal with similar radiation levels during their 6-month stays.',
+    scientificSources: [sources[2]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'van-allen-educational',  
+    conspiracyId: 'van-allen-belt',
+    responseType: 'educational',
+    content: 'The Van Allen radiation belts are two doughnut-shaped regions of charged particles trapped by Earth\'s magnetic field, discovered by James Van Allen in 1958. Understanding radiation requires distinguishing between radiation flux (particles per second per area) and total absorbed dose (cumulative energy deposited in tissue over time). The inner belt (400-6,000 miles altitude) contains high-energy protons, while the outer belt (8,000-36,000 miles) contains mostly electrons. Apollo trajectories were carefully planned to pass through the thinner regions at higher latitudes, minimizing exposure time. The spacecraft\'s aluminum hull (approximately 6-12 cm thick) provided significant shielding against charged particles. Total radiation exposure for Apollo missions was measured at 0.18-1.14 rads (11.4 rems maximum) - well below the 25 rem annual limit for radiation workers. For comparison, a chest CT scan delivers about 7 rems. The biological effects of radiation follow well-established dose-response relationships, and the Apollo exposures were within acceptable limits for short-term missions.',
+    scientificSources: [sources[2]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+
+  // Different Shadows responses
+  {
     id: 'different-shadows-short',
     conspiracyId: 'different-shadows',
     responseType: 'short',
     content: 'The sun isn\'t the only light source - the lunar surface reflects sunlight everywhere, just like how the moon reflects light back to Earth. Plus perspective makes parallel shadows look non-parallel. The natural scattered lighting from surface reflection is exactly what you\'d expect on the actual moon.',
     scientificSources: [sources[5]],
     effectiveness: 8,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'different-shadows-comprehensive',
+    conspiracyId: 'different-shadows',
+    responseType: 'comprehensive',
+    content: 'The "different shadow directions" claim misunderstands lunar lighting conditions. While the sun is the primary light source, the lunar surface itself acts as a massive reflector, bouncing sunlight in all directions - this is why we can see the moon from Earth! This reflected light creates secondary illumination that fills in shadows and creates complex lighting scenarios. Additionally, perspective effects make parallel shadows appear to converge or diverge depending on camera angle and terrain slope. The lunar surface is not perfectly flat - it has gentle slopes, crater rims, and undulations that affect shadow directions. If this were filmed in a studio with artificial lighting, the illumination would actually be much more controlled and uniform. The natural, complex lighting patterns in Apollo photos are exactly what you\'d expect from the real lunar environment.',
+    scientificSources: [sources[5]],
+    effectiveness: 9,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'different-shadows-educational',
+    conspiracyId: 'different-shadows',
+    responseType: 'educational',
+    content: 'Lunar lighting involves multiple photometric principles. The moon\'s albedo (reflectivity) averages 0.12, meaning it reflects 12% of incident sunlight - similar to charcoal, but sufficient to create significant secondary illumination when the entire visible surface is illuminated. This creates what photographers call "fill lighting" - reflected light that partially illuminates shadow areas. The lunar surface exhibits both specular (mirror-like) and diffuse (scattered) reflection depending on surface texture and mineral composition. Perspective foreshortening causes parallel lines to appear to converge toward vanishing points, which applies to shadows cast by parallel light rays. Additionally, the lunar surface has subtle topographical variations - gentle slopes of 1-2 degrees are enough to alter shadow directions noticeably. The absence of atmospheric scattering means shadows are sharper than on Earth, making these effects more pronounced. Studio lighting would require dozens of precisely positioned lights to replicate these natural lighting conditions, and the resulting setup would be far more complex than simply filming the actual lunar surface.',
+    scientificSources: [sources[5]],
+    effectiveness: 10,
     lastUpdated: new Date('2024-01-01')
   }
 ];

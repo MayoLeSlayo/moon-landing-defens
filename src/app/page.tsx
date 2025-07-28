@@ -38,22 +38,26 @@ export default function HomePage() {
             
             {/* Featured Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 mb-8">
-              <div className="bg-white p-6 rounded-xl shadow-md text-center">
+              <a href="/evidence/moon-rocks" className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
                 <div className="text-3xl font-bold text-apollo-blue mb-2">842</div>
                 <div className="text-sm text-gray-600">Pounds of Moon Rocks</div>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md text-center">
+                <div className="text-xs text-apollo-blue mt-2">Learn More →</div>
+              </a>
+              <a href="/evidence/analysis" className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
                 <div className="text-3xl font-bold text-evidence-green mb-2">50+</div>
                 <div className="text-sm text-gray-600">Years of Analysis</div>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md text-center">
+                <div className="text-xs text-evidence-green mt-2">Learn More →</div>
+              </a>
+              <a href="/evidence/countries" className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
                 <div className="text-3xl font-bold text-apollo-blue mb-2">30+</div>
                 <div className="text-sm text-gray-600">Countries Confirmed</div>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md text-center">
+                <div className="text-xs text-apollo-blue mt-2">Learn More →</div>
+              </a>
+              <a href="/evidence/missions" className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
                 <div className="text-3xl font-bold text-evidence-green mb-2">6</div>
                 <div className="text-sm text-gray-600">Successful Landings</div>
-              </div>
+                <div className="text-xs text-evidence-green mt-2">Learn More →</div>
+              </a>
             </div>
           </div>
         </section>

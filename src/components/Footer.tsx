@@ -16,22 +16,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/evidence" className="text-gray-300 hover:text-white transition-colors">
                   Evidence Library
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/conspiracies" className="text-gray-300 hover:text-white transition-colors">
                   Common Conspiracies
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/sources" className="text-gray-300 hover:text-white transition-colors">
                   Scientific Sources
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/chat" className="text-gray-300 hover:text-white transition-colors">
                   AI Assistant
                 </a>
               </li>
