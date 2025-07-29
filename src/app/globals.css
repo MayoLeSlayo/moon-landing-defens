@@ -10,11 +10,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-.dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 15, 15, 15;
-  --background-end-rgb: 15, 15, 15;
-}
 
 * {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -31,6 +26,10 @@ body {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   position: relative;
   min-height: 80vh;
+}
+
+.space-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
 
 .hero-space::before {
@@ -59,12 +58,6 @@ body {
   background-clip: text;
 }
 
-.dark .gradient-text {
-  background: linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #60a5fa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 /* Modern Button System */
 .btn-modern {
@@ -75,26 +68,20 @@ body {
   @apply bg-black text-white hover:bg-gray-800 transform hover:scale-105;
 }
 
-.dark .btn-primary {
-  @apply bg-white text-black hover:bg-gray-100;
-}
 
 .btn-secondary {
   @apply border-2 border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50;
 }
 
-.dark .btn-secondary {
-  @apply border-gray-700 text-gray-300 hover:border-gray-600 hover:bg-gray-800;
-}
 
 /* Card System */
 .card-modern {
-  @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  @apply bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
 }
 
 /* Navigation */
 .nav-link {
-  @apply text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200;
+  @apply text-gray-700 hover:text-black font-medium transition-colors duration-200;
 }
 
 .evidence-highlight {

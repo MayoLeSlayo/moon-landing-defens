@@ -47,13 +47,13 @@ export default function HomePage() {
         </section>
 
         {/* Search Section */}
-        <section className="py-24 px-6 bg-white dark:bg-gray-950">
+        <section className="py-24 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Search the Evidence Database
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 text-xl max-w-2xl mx-auto">
+              <p className="text-gray-600 text-xl max-w-2xl mx-auto">
                 Find scientific rebuttals to any moon landing conspiracy theory
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function HomePage() {
         </section>
 
         {/* Results Section */}
-        <section className="py-8 px-6 bg-white dark:bg-gray-950">
+        <section className="py-8 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <SearchResults results={searchResults} />
           </div>
@@ -70,28 +70,28 @@ export default function HomePage() {
 
         {/* Featured Stats - Only show when no search results */}
         {searchResults.length === 0 && (
-          <section className="py-16 px-6 bg-white dark:bg-gray-950">
+          <section className="py-16 px-6 bg-white">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <a href="/evidence/moon-rocks" className="card-modern p-8 text-center group">
-                  <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:scale-110 transition-transform">842</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">Pounds of Moon Rocks</div>
-                  <div className="text-xs text-blue-600 dark:text-blue-400 transition-colors">Learn More →</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform">842</div>
+                  <div className="text-sm text-gray-600 mb-3">Pounds of Moon Rocks</div>
+                  <div className="text-xs text-blue-600 transition-colors">Learn More →</div>
                 </a>
                 <a href="/evidence/countries" className="card-modern p-8 text-center group">
-                  <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-2 group-hover:scale-110 transition-transform">30+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">Countries Confirmed</div>
-                  <div className="text-xs text-emerald-600 dark:text-emerald-400 transition-colors">Learn More →</div>
+                  <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:scale-110 transition-transform">30+</div>
+                  <div className="text-sm text-gray-600 mb-3">Countries Confirmed</div>
+                  <div className="text-xs text-emerald-600 transition-colors">Learn More →</div>
                 </a>
                 <a href="/evidence/workforce" className="card-modern p-8 text-center group">
-                  <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:scale-110 transition-transform">400K</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">People Worked on Apollo</div>
-                  <div className="text-xs text-blue-600 dark:text-blue-400 transition-colors">Learn More →</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform">400K</div>
+                  <div className="text-sm text-gray-600 mb-3">People Worked on Apollo</div>
+                  <div className="text-xs text-blue-600 transition-colors">Learn More →</div>
                 </a>
                 <a href="/evidence/retroreflectors" className="card-modern p-8 text-center group">
-                  <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-2 group-hover:scale-110 transition-transform">Active</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">Retroreflectors Today</div>
-                  <div className="text-xs text-emerald-600 dark:text-emerald-400 transition-colors">Learn More →</div>
+                  <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:scale-110 transition-transform">Active</div>
+                  <div className="text-sm text-gray-600 mb-3">Retroreflectors Today</div>
+                  <div className="text-xs text-emerald-600 transition-colors">Learn More →</div>
                 </a>
               </div>
             </div>
@@ -156,13 +156,13 @@ export default function HomePage() {
                       <div className="flex items-start space-x-6">
                         <div className="text-4xl">{evidence.icon}</div>
                         <div className="flex-1">
-                          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                             {evidence.title}
                           </h3>
-                          <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                          <p className="text-gray-700 text-lg leading-relaxed">
                             {evidence.description}
                           </p>
-                          <div className="mt-4 text-blue-600 dark:text-blue-400 text-sm font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
+                          <div className="mt-4 text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors">
                             Learn More →
                           </div>
                         </div>
