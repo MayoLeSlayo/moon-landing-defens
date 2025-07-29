@@ -271,5 +271,63 @@ export const evidenceResponses: EvidenceResponse[] = [
     scientificSources: [sources[5]],
     effectiveness: 10,
     lastUpdated: new Date('2024-01-01')
+  },
+
+  // Flimsy Lunar Module responses
+  {
+    id: 'flimsy-lander-short',
+    conspiracyId: 'flimsy-lander',
+    responseType: 'short',
+    content: 'The lunar module looks "flimsy" because it was brilliantly engineered for space - not Earth! In the vacuum of space, there\'s no wind, weather, or atmospheric pressure to resist. The thin walls and foil-like thermal blankets were perfectly adequate for the moon\'s environment. It\'s like criticizing a race car for not being built like a tank - different environments require different engineering solutions.',
+    scientificSources: [sources[1]],
+    effectiveness: 9,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'flimsy-lander-comprehensive',
+    conspiracyId: 'flimsy-lander',
+    responseType: 'comprehensive',
+    content: 'The Lunar Module\'s "flimsy" appearance is actually a masterpiece of aerospace engineering optimized for the lunar environment. Unlike Earth vehicles that must withstand atmospheric pressure, weather, and gravity, the LM was designed for space\'s vacuum environment. The thin aluminum walls (0.012 inches in the ascent stage) were sufficient because there\'s no atmospheric pressure to push against them. The gold and silver thermal blankets that look like "foil" are multi-layer insulation (MLI) designed to regulate temperature in the extreme thermal environment of space (+250°F in sunlight, -250°F in shadow). Every gram mattered due to fuel constraints, so engineers minimized weight while maintaining structural integrity. The LM underwent extensive testing including thermal-vacuum chambers, vibration tests, and structural load testing. It successfully completed multiple unmanned test flights before carrying astronauts. The "flimsy" appearance demonstrates superior engineering - building exactly what was needed for the mission, nothing more.',
+    scientificSources: [sources[1], sources[4]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'flimsy-lander-educational',
+    conspiracyId: 'flimsy-lander',
+    responseType: 'educational',
+    content: 'Aerospace engineering principles dictate that spacecraft design must be optimized for their operational environment. The Lunar Module represents advanced lightweight structural engineering where the strength-to-weight ratio was critical for mission success. The ascent stage\'s aluminum honeycomb construction provided structural rigidity while minimizing mass. The descent stage used a truss framework design that distributed loads efficiently while remaining lightweight. Multi-layer insulation (MLI) blankets used materials like Mylar, Kapton, and Teflon in precisely engineered layers to create thermal barriers in the vacuum of space. These materials appear fragile but were specifically chosen for their thermal properties, durability in space conditions, and minimal weight. Ground-based testing included pressurization tests, structural load testing to 1.5 times expected loads, thermal cycling between extreme temperatures, and vibration testing simulating launch conditions. The LM\'s design philosophy prioritized function over Earth-based aesthetics, resulting in a spacecraft that appeared unconventional but was perfectly suited for its lunar mission requirements.',
+    scientificSources: [sources[1], sources[4]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+
+  // Boot Print Mismatch responses
+  {
+    id: 'boot-print-short',
+    conspiracyId: 'boot-print-mismatch',
+    responseType: 'short',
+    content: 'The "boot mismatch" confusion comes from mixing up different types of footwear! Astronauts wore regular boots inside the lunar module, but put on separate lunar overshoes when walking outside. The famous footprint is from Neil Armstrong\'s lunar overshoe, not his regular boot. It\'s like complaining that a photo of snow boots doesn\'t match someone\'s sneakers - they\'re different shoes for different purposes!',
+    scientificSources: [sources[4]],
+    effectiveness: 9,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'boot-print-comprehensive',
+    conspiracyId: 'boot-print-mismatch',
+    responseType: 'comprehensive',
+    content: 'The boot print "mismatch" is actually evidence of proper spacewalk procedures. Astronauts wore two different types of footwear: their regular pressure suit boots inside the spacecraft, and separate lunar overshoes (officially called "Lunar Extravehicular Visor Assembly overshoes") when walking on the moon\'s surface. The famous footprint photograph shows the tread pattern from Neil Armstrong\'s lunar overshoe, not his pressure suit boot. These overshoes were designed specifically for lunar surface operations, with deep treads for traction in lunar dust and additional protection for the pressure suit boots. The different tread patterns served different purposes: the pressure suit boots were optimized for spacecraft operations, while the lunar overshoes were designed for surface mobility. This is standard aerospace protocol - using mission-specific equipment for different phases of the mission. The existence of multiple boot types actually demonstrates the thoroughness of mission planning, not evidence of deception.',
+    scientificSources: [sources[1], sources[4]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'boot-print-educational',
+    conspiracyId: 'boot-print-mismatch',
+    responseType: 'educational',
+    content: 'Apollo spacesuit design incorporated multiple layers of specialized equipment for different mission phases. The Extravehicular Mobility Unit (EMU) included integrated pressure boots designed for spacecraft operations, featuring soft soles suitable for interior surfaces and basic mobility. For lunar surface operations, astronauts donned additional Lunar Extravehicular Visor Assembly (LEVA) overshoes that featured aggressive tread patterns optimized for traction on lunar regolith. These overshoes used materials resistant to the abrasive properties of lunar dust and temperature extremes of the lunar surface. The tread pattern design incorporated deep grooves to provide maximum surface contact and prevent slipping on the fine-grained lunar surface. Mission protocols required astronauts to don these overshoes before exiting the lunar module and remove them before re-entering to prevent lunar dust contamination of the spacecraft interior. The famous bootprint photograph documents the LEVA overshoe tread pattern, not the pressure suit boot pattern, demonstrating proper adherence to extravehicular activity procedures.',
+    scientificSources: [sources[1], sources[4]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
   }
 ];
