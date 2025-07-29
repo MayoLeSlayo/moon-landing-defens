@@ -1,35 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 15, 15;
+  --background-end-rgb: 15, 15, 15;
+}
+
+* {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Clean Professional Design */
+/* Modern Clean Design System */
 .hero-space {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   position: relative;
+  min-height: 80vh;
 }
 
 .hero-space::before {
@@ -42,53 +43,58 @@ body {
   background-image: url('/images/space.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.15;
-  z-index: -1;
+  opacity: 0.2;
+  z-index: 0;
 }
 
-.space-gradient {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
-.section-bg {
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+.gradient-text {
+  background: linear-gradient(135deg, #22c55e 0%, #06b6d4 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Modern Clean Components */
-.card-modern {
-  background: white;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+.dark .gradient-text {
+  background: linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.card-modern:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transform: translateY(-2px);
+/* Modern Button System */
+.btn-modern {
+  @apply px-8 py-3 rounded-xl font-semibold transition-all duration-300;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  color: white;
-  border: none;
-  transition: all 0.3s ease;
+  @apply bg-black text-white hover:bg-gray-800 transform hover:scale-105;
 }
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  transform: translateY(-1px);
+.dark .btn-primary {
+  @apply bg-white text-black hover:bg-gray-100;
 }
 
 .btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+  @apply border-2 border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50;
 }
 
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
+.dark .btn-secondary {
+  @apply border-gray-700 text-gray-300 hover:border-gray-600 hover:bg-gray-800;
+}
+
+/* Card System */
+.card-modern {
+  @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+}
+
+/* Navigation */
+.nav-link {
+  @apply text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200;
 }
 
 .evidence-highlight {

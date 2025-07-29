@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 export const metadata: Metadata = {
-  title: 'Moon Landing Defense System',
-  description: 'AI-powered knowledge base for defending moon landing facts and countering conspiracy theories',
+  title: 'Moon Landing Defense - Evidence-Based Truth',
+  description: 'AI-powered evidence base for countering moon landing conspiracy theories with scientific facts and authoritative sources.',
   keywords: 'moon landing, Apollo, NASA, conspiracy theories, space facts, evidence',
 }
 
@@ -17,10 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="min-h-screen bg-gray-50 dark:bg-space-black">
+      <body className="antialiased">
+        <ThemeProvider>
           {children}
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   )

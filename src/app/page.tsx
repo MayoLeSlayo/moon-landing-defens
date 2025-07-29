@@ -16,23 +16,30 @@ export default function HomePage() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="hero-space text-white py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Defend the <span className="text-blue-300">Truth</span>
+        <section className="hero-space flex items-center justify-center px-6">
+          <div className="hero-content max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+              Defend <span className="gradient-text">Anything</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 font-light">
-              AI-powered evidence base for countering moon landing conspiracy theories
-            </p>
-            <p className="text-lg mb-12 text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Search for conspiracy theories and get instant access to scientific evidence, 
-              authoritative sources, and battle-tested responses for social media debates.
+            <p className="text-xl md:text-2xl mb-12 text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
+              Your evidence and research partner, grounded in the scientific facts you trust, built with the latest space exploration discoveries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary px-8 py-4 rounded-lg text-lg font-semibold">
-                Start Defending Truth
+              <button 
+                onClick={() => {
+                  (document.querySelector('input[type="text"]') as HTMLInputElement)?.focus();
+                  document.querySelector('section:nth-of-type(2)')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="btn-modern btn-primary"
+              >
+                Try Moon Defense
               </button>
-              <button className="btn-secondary px-8 py-4 rounded-lg text-lg font-semibold">
+              <button 
+                onClick={() => {
+                  window.location.href = '/evidence';
+                }}
+                className="btn-modern btn-secondary"
+              >
                 Explore Evidence
               </button>
             </div>
@@ -40,48 +47,56 @@ export default function HomePage() {
         </section>
 
         {/* Search Section */}
-        <section className="section-bg py-16 px-4">
+        <section className="py-24 px-6 bg-white dark:bg-gray-950">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 Search the Evidence Database
               </h2>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 dark:text-gray-400 text-xl max-w-2xl mx-auto">
                 Find scientific rebuttals to any moon landing conspiracy theory
               </p>
             </div>
             <SearchBar onResults={setSearchResults} />
-            
-            {/* Featured Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 mb-8">
-              <a href="/evidence/moon-rocks" className="card-modern p-6 rounded-xl text-center group">
-                <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">842</div>
-                <div className="text-sm text-gray-600 mb-3">Pounds of Moon Rocks</div>
-                <div className="text-xs text-blue-600 group-hover:text-blue-700 transition-colors">Learn More →</div>
-              </a>
-              <a href="/evidence/countries" className="card-modern p-6 rounded-xl text-center group">
-                <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:text-emerald-700 transition-colors">30+</div>
-                <div className="text-sm text-gray-600 mb-3">Countries Confirmed</div>
-                <div className="text-xs text-emerald-600 group-hover:text-emerald-700 transition-colors">Learn More →</div>
-              </a>
-              <a href="/evidence/workforce" className="card-modern p-6 rounded-xl text-center group">
-                <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">400K</div>
-                <div className="text-sm text-gray-600 mb-3">People Worked on Apollo</div>
-                <div className="text-xs text-blue-600 group-hover:text-blue-700 transition-colors">Learn More →</div>
-              </a>
-              <a href="/evidence/retroreflectors" className="card-modern p-6 rounded-xl text-center group">
-                <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:text-emerald-700 transition-colors">Active</div>
-                <div className="text-sm text-gray-600 mb-3">Retroreflectors Today</div>
-                <div className="text-xs text-emerald-600 group-hover:text-emerald-700 transition-colors">Learn More →</div>
-              </a>
-            </div>
           </div>
         </section>
 
         {/* Results Section */}
-        <section className="py-8 px-4 bg-white">
-          <SearchResults results={searchResults} />
+        <section className="py-8 px-6 bg-white dark:bg-gray-950">
+          <div className="max-w-6xl mx-auto">
+            <SearchResults results={searchResults} />
+          </div>
         </section>
+
+        {/* Featured Stats - Only show when no search results */}
+        {searchResults.length === 0 && (
+          <section className="py-16 px-6 bg-white dark:bg-gray-950">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="/evidence/moon-rocks" className="card-modern p-8 text-center group">
+                  <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:scale-110 transition-transform">842</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">Pounds of Moon Rocks</div>
+                  <div className="text-xs text-blue-600 dark:text-blue-400 transition-colors">Learn More →</div>
+                </a>
+                <a href="/evidence/countries" className="card-modern p-8 text-center group">
+                  <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-2 group-hover:scale-110 transition-transform">30+</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">Countries Confirmed</div>
+                  <div className="text-xs text-emerald-600 dark:text-emerald-400 transition-colors">Learn More →</div>
+                </a>
+                <a href="/evidence/workforce" className="card-modern p-8 text-center group">
+                  <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:scale-110 transition-transform">400K</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">People Worked on Apollo</div>
+                  <div className="text-xs text-blue-600 dark:text-blue-400 transition-colors">Learn More →</div>
+                </a>
+                <a href="/evidence/retroreflectors" className="card-modern p-8 text-center group">
+                  <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-2 group-hover:scale-110 transition-transform">Active</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">Retroreflectors Today</div>
+                  <div className="text-xs text-emerald-600 dark:text-emerald-400 transition-colors">Learn More →</div>
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* No Search State - Featured Evidence */}
         {searchResults.length === 0 && (
@@ -123,21 +138,38 @@ export default function HomePage() {
                     icon: "🌍",
                     color: "blue"
                   }
-                ].map((evidence, index) => (
-                  <div key={index} className="card-modern p-8 rounded-xl border-l-4 border-blue-500">
-                    <div className="flex items-start space-x-6">
-                      <div className="text-4xl">{evidence.icon}</div>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                          {evidence.title}
-                        </h3>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                          {evidence.description}
-                        </p>
+                ].map((evidence, index) => {
+                  const linkMap = [
+                    '/evidence/retroreflectors',
+                    '/evidence/workforce', 
+                    '/evidence/moon-rocks',
+                    '/evidence/countries',
+                    '/evidence/countries'
+                  ];
+                  
+                  return (
+                    <a 
+                      key={index} 
+                      href={linkMap[index]}
+                      className="card-modern p-8 rounded-xl border-l-4 border-blue-500 block hover:border-blue-600 transition-colors group"
+                    >
+                      <div className="flex items-start space-x-6">
+                        <div className="text-4xl">{evidence.icon}</div>
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            {evidence.title}
+                          </h3>
+                          <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                            {evidence.description}
+                          </p>
+                          <div className="mt-4 text-blue-600 dark:text-blue-400 text-sm font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
+                            Learn More →
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
+                    </a>
+                  );
+                })}
               </div>
 
               <div className="text-center mt-16">
