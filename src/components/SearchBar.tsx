@@ -56,10 +56,10 @@ export default function SearchBar({ onResults, placeholder = "Search conspiracy 
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto">
+    <form onSubmit={handleSubmit} className="w-full max-w-5xl mx-auto">
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-          <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+          <svg className="h-6 w-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
@@ -69,16 +69,16 @@ export default function SearchBar({ onResults, placeholder = "Search conspiracy 
           value={query}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full pl-12 pr-16 py-4 text-lg border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-apollo-blue focus:border-apollo-blue outline-none transition-all duration-200 bg-white shadow-lg"
+          className="w-full pl-16 pr-20 py-6 text-xl glass-morphism border-2 border-white border-opacity-20 rounded-2xl focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 outline-none transition-all duration-300 bg-white bg-opacity-10 text-white placeholder-gray-300 cosmic-glow"
         />
         
         <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
           {isLoading ? (
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-apollo-blue"></div>
+            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-yellow-300"></div>
           ) : (
             <button
               type="submit"
-              className="bg-apollo-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="glass-morphism text-white px-6 py-3 rounded-xl hover:bg-white hover:bg-opacity-20 transition-all duration-300 font-medium cosmic-glow"
               disabled={!query.trim()}
             >
               Search
@@ -88,8 +88,8 @@ export default function SearchBar({ onResults, placeholder = "Search conspiracy 
       </div>
       
       {/* Quick suggestions */}
-      <div className="mt-3 flex flex-wrap gap-2">
-        <span className="text-sm text-gray-600 mr-2">Try:</span>
+      <div className="mt-6 flex flex-wrap gap-3 justify-center">
+        <span className="text-sm text-gray-200 mr-2 flex items-center">Try:</span>
         {['waving flag', 'no stars', 'radiation belt', 'shadows', 'moon rocks'].map((suggestion) => (
           <button
             key={suggestion}
@@ -97,7 +97,7 @@ export default function SearchBar({ onResults, placeholder = "Search conspiracy 
               setQuery(suggestion);
               handleSearch(suggestion);
             }}
-            className="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors text-gray-700"
+            className="text-sm glass-morphism hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded-full transition-all duration-300 text-gray-200 hover:text-white"
           >
             {suggestion}
           </button>

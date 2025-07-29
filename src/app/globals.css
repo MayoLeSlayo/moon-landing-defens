@@ -26,8 +26,53 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* Modern Galactic Backgrounds */
+.hero-space {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/images/space.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .space-gradient {
   background: linear-gradient(135deg, #0B1426 0%, #1E3A8A 50%, #312E81 100%);
+}
+
+.nebula-gradient {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/images/space2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.eclipse-gradient {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/images/eclipse.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.cosmic-gradient {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/images/space3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Galactic UI Enhancements */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cosmic-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+.nebula-glow {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(16, 185, 129, 0.1);
+}
+
+.stellar-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 .evidence-highlight {
