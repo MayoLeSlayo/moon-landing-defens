@@ -10,10 +10,10 @@ export default function MoonRocksPage() {
       
       <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="cosmic-gradient text-white py-20 px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 stellar-text">842 Pounds of Moon Rocks</h1>
-            <p className="text-2xl text-gray-100 font-light leading-relaxed">
+        <section className="space-gradient text-white py-16 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">842 Pounds of Moon Rocks</h1>
+            <p className="text-xl text-gray-200 leading-relaxed">
               Comprehensive analysis of lunar samples proves extraterrestrial origin
             </p>
           </div>
@@ -22,20 +22,20 @@ export default function MoonRocksPage() {
         <div className="max-w-6xl mx-auto px-4 py-12">
           {/* Key Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <div className="glass-morphism cosmic-glow p-6 rounded-xl text-center">
-              <div className="text-5xl font-bold text-blue-300 mb-2">842</div>
+            <div className="card-modern p-6 rounded-xl text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">842</div>
               <div className="text-sm text-gray-600">Pounds Collected</div>
             </div>
-            <div className="glass-morphism nebula-glow p-6 rounded-xl text-center">
-              <div className="text-5xl font-bold text-green-300 mb-2">6</div>
+            <div className="card-modern p-6 rounded-xl text-center">
+              <div className="text-4xl font-bold text-emerald-600 mb-2">6</div>
               <div className="text-sm text-gray-600">Apollo Missions</div>
             </div>
-            <div className="glass-morphism p-6 rounded-xl text-center bg-white bg-opacity-10">
-              <div className="text-5xl font-bold text-yellow-300 mb-2">2415</div>
+            <div className="card-modern p-6 rounded-xl text-center">
+              <div className="text-4xl font-bold text-indigo-600 mb-2">2415</div>
               <div className="text-sm text-gray-600">Individual Samples</div>
             </div>
-            <div className="glass-morphism cosmic-glow p-6 rounded-xl text-center">
-              <div className="text-5xl font-bold text-blue-300 mb-2">50+</div>
+            <div className="card-modern p-6 rounded-xl text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
               <div className="text-sm text-gray-600">Years of Analysis</div>
             </div>
           </div>

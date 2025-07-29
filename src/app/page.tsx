@@ -16,23 +16,23 @@ export default function HomePage() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="hero-space text-white py-24 px-4 min-h-screen flex items-center">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 stellar-text">
-              Defend the <span className="text-yellow-300">Truth</span>
+        <section className="hero-space text-white py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Defend the <span className="text-blue-300">Truth</span>
             </h1>
-            <p className="text-2xl md:text-3xl mb-8 text-gray-100 font-light">
+            <p className="text-xl md:text-2xl mb-8 text-gray-200 font-light">
               AI-powered evidence base for countering moon landing conspiracy theories
             </p>
-            <p className="text-lg mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg mb-12 text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Search for conspiracy theories and get instant access to scientific evidence, 
               authoritative sources, and battle-tested responses for social media debates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="glass-morphism cosmic-glow px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+              <button className="btn-primary px-8 py-4 rounded-lg text-lg font-semibold">
                 Start Defending Truth
               </button>
-              <button className="border border-white border-opacity-30 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+              <button className="btn-secondary px-8 py-4 rounded-lg text-lg font-semibold">
                 Explore Evidence
               </button>
             </div>
@@ -40,13 +40,13 @@ export default function HomePage() {
         </section>
 
         {/* Search Section */}
-        <section className="nebula-gradient py-16 px-4">
+        <section className="section-bg py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 stellar-text">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Search the Evidence Database
               </h2>
-              <p className="text-gray-200 text-lg">
+              <p className="text-gray-600 text-lg">
                 Find scientific rebuttals to any moon landing conspiracy theory
               </p>
             </div>
@@ -54,25 +54,25 @@ export default function HomePage() {
             
             {/* Featured Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 mb-8">
-              <a href="/evidence/moon-rocks" className="glass-morphism cosmic-glow p-6 rounded-xl text-center hover:bg-white hover:bg-opacity-20 transition-all duration-300 group">
-                <div className="text-4xl font-bold text-blue-300 mb-2 group-hover:text-white transition-colors">842</div>
-                <div className="text-sm text-gray-200 mb-3">Pounds of Moon Rocks</div>
-                <div className="text-xs text-blue-300 group-hover:text-yellow-300 transition-colors">Learn More →</div>
+              <a href="/evidence/moon-rocks" className="card-modern p-6 rounded-xl text-center group">
+                <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">842</div>
+                <div className="text-sm text-gray-600 mb-3">Pounds of Moon Rocks</div>
+                <div className="text-xs text-blue-600 group-hover:text-blue-700 transition-colors">Learn More →</div>
               </a>
-              <a href="/evidence/countries" className="glass-morphism nebula-glow p-6 rounded-xl text-center hover:bg-white hover:bg-opacity-20 transition-all duration-300 group">
-                <div className="text-4xl font-bold text-green-300 mb-2 group-hover:text-white transition-colors">30+</div>
-                <div className="text-sm text-gray-200 mb-3">Countries Confirmed</div>
-                <div className="text-xs text-green-300 group-hover:text-yellow-300 transition-colors">Learn More →</div>
+              <a href="/evidence/countries" className="card-modern p-6 rounded-xl text-center group">
+                <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:text-emerald-700 transition-colors">30+</div>
+                <div className="text-sm text-gray-600 mb-3">Countries Confirmed</div>
+                <div className="text-xs text-emerald-600 group-hover:text-emerald-700 transition-colors">Learn More →</div>
               </a>
-              <a href="/evidence/workforce" className="glass-morphism cosmic-glow p-6 rounded-xl text-center hover:bg-white hover:bg-opacity-20 transition-all duration-300 group">
-                <div className="text-4xl font-bold text-blue-300 mb-2 group-hover:text-white transition-colors">400K</div>
-                <div className="text-sm text-gray-200 mb-3">People Worked on Apollo</div>
-                <div className="text-xs text-blue-300 group-hover:text-yellow-300 transition-colors">Learn More →</div>
+              <a href="/evidence/workforce" className="card-modern p-6 rounded-xl text-center group">
+                <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">400K</div>
+                <div className="text-sm text-gray-600 mb-3">People Worked on Apollo</div>
+                <div className="text-xs text-blue-600 group-hover:text-blue-700 transition-colors">Learn More →</div>
               </a>
-              <a href="/evidence/retroreflectors" className="glass-morphism nebula-glow p-6 rounded-xl text-center hover:bg-white hover:bg-opacity-20 transition-all duration-300 group">
-                <div className="text-4xl font-bold text-green-300 mb-2 group-hover:text-white transition-colors">Active</div>
-                <div className="text-sm text-gray-200 mb-3">Retroreflectors Today</div>
-                <div className="text-xs text-green-300 group-hover:text-yellow-300 transition-colors">Learn More →</div>
+              <a href="/evidence/retroreflectors" className="card-modern p-6 rounded-xl text-center group">
+                <div className="text-4xl font-bold text-emerald-600 mb-2 group-hover:text-emerald-700 transition-colors">Active</div>
+                <div className="text-sm text-gray-600 mb-3">Retroreflectors Today</div>
+                <div className="text-xs text-emerald-600 group-hover:text-emerald-700 transition-colors">Learn More →</div>
               </a>
             </div>
           </div>
@@ -85,53 +85,53 @@ export default function HomePage() {
 
         {/* No Search State - Featured Evidence */}
         {searchResults.length === 0 && (
-          <section className="eclipse-gradient py-20 px-4">
+          <section className="py-20 px-4 bg-white">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white stellar-text">
+              <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
                 Top 5 Pieces of Evidence
               </h2>
               
-              <div className="grid gap-8">
+              <div className="grid gap-6">
                 {[
                   {
                     title: "Retroreflectors Active RIGHT NOW",
                     description: "Scientists at observatories worldwide bounce lasers off Apollo equipment every single day with millimeter precision - impossible to fake",
                     icon: "🔬",
-                    color: "evidence-green"
+                    color: "blue"
                   },
                   {
                     title: "400,000 People Worked on Apollo",
                     description: "The largest peacetime workforce in history spanning 20,000+ companies - impossible to keep secret for 50+ years",
                     icon: "👥",
-                    color: "apollo-blue"
+                    color: "emerald"
                   },
                   {
                     title: "842 Pounds of Moon Rocks",
                     description: "Analyzed by independent laboratories worldwide with unique properties impossible to replicate on Earth",
                     icon: "🪨",
-                    color: "evidence-green"
+                    color: "blue"
                   },
                   {
                     title: "Soviet Union Cold War Rivals Confirmed",
                     description: "The USSR tracked Apollo missions with advanced surveillance - they had every motivation to expose a hoax but never did",
                     icon: "📡",
-                    color: "apollo-blue"
+                    color: "emerald"
                   },
                   {
                     title: "30+ Countries Independently Verified",
                     description: "Nations worldwide tracked missions with radio telescopes and confirmed authenticity, including geopolitical rivals",
                     icon: "🌍",
-                    color: "evidence-green"
+                    color: "blue"
                   }
                 ].map((evidence, index) => (
-                  <div key={index} className="glass-morphism p-8 rounded-2xl border-l-4 border-yellow-400 hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                  <div key={index} className="card-modern p-8 rounded-xl border-l-4 border-blue-500">
                     <div className="flex items-start space-x-6">
-                      <div className="text-4xl filter drop-shadow-lg">{evidence.icon}</div>
+                      <div className="text-4xl">{evidence.icon}</div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-semibold text-white mb-3 stellar-text">
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-3">
                           {evidence.title}
                         </h3>
-                        <p className="text-gray-200 text-lg leading-relaxed">
+                        <p className="text-gray-700 text-lg leading-relaxed">
                           {evidence.description}
                         </p>
                       </div>
@@ -141,7 +141,7 @@ export default function HomePage() {
               </div>
 
               <div className="text-center mt-16">
-                <p className="text-gray-200 mb-8 text-xl">
+                <p className="text-gray-600 mb-8 text-xl">
                   Ready to counter conspiracy theories? Start by searching above.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
@@ -152,7 +152,7 @@ export default function HomePage() {
                         // This would trigger a search - implement the connection
                         console.log('Search for:', term);
                       }}
-                      className="glass-morphism px-6 py-3 rounded-xl text-white hover:bg-white hover:bg-opacity-20 transition-all duration-300 cosmic-glow"
+                      className="btn-secondary text-gray-700 border-gray-300 hover:bg-gray-50 px-6 py-3 rounded-lg transition-all duration-300"
                     >
                       Search &quot;{term}&quot;
                     </button>

@@ -7,32 +7,32 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="glass-morphism backdrop-blur-md text-white shadow-2xl border-b border-white border-opacity-20 sticky top-0 z-50">
+    <header className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center cosmic-glow group-hover:scale-110 transition-transform duration-300">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <span className="text-white font-bold text-xl">🌙</span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold stellar-text">Moon Landing Defense</h1>
-              <p className="text-sm text-gray-300">Evidence-Based Truth</p>
+              <h1 className="text-2xl font-bold text-gray-900">Moon Landing Defense</h1>
+              <p className="text-sm text-gray-600">Evidence-Based Truth</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="hover:text-yellow-300 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10">
+          <nav className="hidden md:flex items-center space-x-2">
+            <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100 font-medium">
               Search
             </Link>
-            <Link href="/chat" className="hover:text-yellow-300 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10">
+            <Link href="/chat" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100 font-medium">
               AI Assistant
             </Link>
-            <Link href="/evidence" className="hover:text-yellow-300 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10">
+            <Link href="/evidence" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100 font-medium">
               Evidence Library
             </Link>
-            <Link href="/admin" className="hover:text-yellow-300 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white hover:bg-opacity-10">
+            <Link href="/admin" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100 font-medium">
               Admin
             </Link>
           </nav>
@@ -40,7 +40,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-apollo-blue transition-colors"
+            className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
@@ -54,18 +54,18 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-apollo-blue">
-            <nav className="flex flex-col space-y-4">
-              <Link href="/" className="hover:text-lunar-silver transition-colors" onClick={() => setIsMenuOpen(false)}>
+          <div className="md:hidden py-4 border-t border-gray-200">
+            <nav className="flex flex-col space-y-2">
+              <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100" onClick={() => setIsMenuOpen(false)}>
                 Search
               </Link>
-              <Link href="/chat" className="hover:text-lunar-silver transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/chat" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100" onClick={() => setIsMenuOpen(false)}>
                 AI Assistant
               </Link>
-              <Link href="/evidence" className="hover:text-lunar-silver transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/evidence" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100" onClick={() => setIsMenuOpen(false)}>
                 Evidence Library
               </Link>
-              <Link href="/admin" className="hover:text-lunar-silver transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/admin" className="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100" onClick={() => setIsMenuOpen(false)}>
                 Admin
               </Link>
             </nav>
