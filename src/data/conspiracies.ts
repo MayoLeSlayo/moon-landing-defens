@@ -225,6 +225,42 @@ export const sources: Source[] = [
     type: 'academic',
     credibilityScore: 9,
     summary: 'Technical analysis of Apollo thermal protection systems and temperature management'
+  },
+  {
+    id: 'fullfact-buzz-aldrin',
+    title: 'Full Fact - Buzz Aldrin Moon Landing Quotes Analysis',
+    url: 'https://fullfact.org/online/buzz-aldrin-moon-landing-fake/',
+    organization: 'Full Fact',
+    type: 'academic',
+    credibilityScore: 9,
+    summary: 'Fact-checking analysis of out-of-context Buzz Aldrin quotes and their actual meaning'
+  },
+  {
+    id: 'conan-full-interview',
+    title: 'Buzz Aldrin Full Interview on Conan O\'Brien Show',
+    url: 'https://youtu.be/1Y30VAkHtdw?si=vllrw4CTIvBB0nrZ',
+    organization: 'Conan O\'Brien Show',
+    type: 'academic',
+    credibilityScore: 8,
+    summary: 'Complete interview showing satirical comedy context of misquoted Aldrin statements'
+  },
+  {
+    id: 'oxford-full-interview',
+    title: 'Buzz Aldrin Full Interview at Oxford Union',
+    url: 'https://www.youtube.com/watch?v=HV_bD3xQG9Y&t=1809s',
+    organization: 'Oxford Union',
+    type: 'academic',
+    credibilityScore: 9,
+    summary: 'Complete Oxford presentation showing technical discussion context of circuit breaker comments'
+  },
+  {
+    id: 'zoey-full-interview',
+    title: 'Buzz Aldrin Full Interview with Young Girl About Moon Missions',
+    url: 'https://www.youtube.com/watch?v=Y4UP6nRMuGs&t=430s',
+    organization: 'Interview Documentation',
+    type: 'academic',
+    credibilityScore: 8,
+    summary: 'Complete interview showing financial constraints context of "not going there" statement'
   }
 ];
 
@@ -670,7 +706,20 @@ export const conspiracyTheories: ConspiracyTheory[] = [
       'Equipment would fail in temperature extremes',
       'Spacesuits insufficient for lunar conditions'
     ],
-    tags: ['temperature extremes', 'thermal protection', 'spacesuit technology', 'mission timing', 'cooling systems']
+    tags: ['temperature extremes', 'thermal protection', 'spacesuit technology', 'mission timing', 'cooling systems']  
+  },
+  {
+    id: 'buzz-aldrin-out-of-context',
+    title: 'Buzz Aldrin Out-of-Context Quotes',
+    claim: 'Buzz Aldrin admitted the moon landing was fake in various interviews when quotes are taken out of context',
+    category: 'logical',
+    commonVariations: [
+      'Buzz Aldrin confessed to moon landing hoax',
+      'Aldrin said "we didn\'t go there" proving it was fake',
+      'Aldrin admitted to a "secret" about the moon landing',
+      'Astronaut testimonies prove the hoax'
+    ],
+    tags: ['buzz aldrin', 'out of context', 'quote mining', 'misrepresentation', 'astronaut testimony', 'disinformation']
   }
 ];
 
@@ -1744,6 +1793,35 @@ export const evidenceResponses: EvidenceResponse[] = [
     responseType: 'educational',
     content: 'Thermal protection engineering analysis demonstrates successful management of lunar temperature challenges through advanced materials science and mission planning. Mission timing strategy involved all landings during lunar dawn periods with solar elevation angles between 4.7° and 14.7°, avoiding extreme midday heat (+127°C) and midnight cold (-173°C), and operational periods limited to moderate temperature ranges. Spacesuit thermal technology included multi-layer insulation with 11 distinct layers providing thermal barriers, reflective outer surfaces using white Ortho-Fabric reflecting 90% of incident solar radiation, aluminized Mylar layers providing radiant heat barriers, and Kapton film withstanding extreme temperature cycling from -269°C to +400°C. Active thermal management systems featured Liquid Cooling and Ventilation Garment (LCVG) circulating water through flexible tubing network, sublimator heat exchangers removing metabolic and solar heat through controlled water sublimation, Primary Life Support System (PLSS) integrating thermal control with life support functions, and backup thermal control systems providing redundancy for critical operations. Equipment thermal design utilized multilayer insulation blankets protecting sensitive electronics, passive thermal control through spacecraft rotation ensuring even heat distribution, radiator systems for heat rejection, and conservative design philosophy with multiple safety margins. Operational success included 21 successful EVAs totaling over 80 hours on lunar surface, astronaut comfort maintenance throughout surface operations, equipment functionality across all missions, and thermal system performance exceeding design specifications.',
     scientificSources: [sources[24], sources[1], sources[6], sources[4]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+
+  // Buzz Aldrin Out-of-Context Quotes responses
+  {
+    id: 'buzz-aldrin-context-short',
+    conspiracyId: 'buzz-aldrin-out-of-context',
+    responseType: 'short',
+    content: 'These are deliberate misquotes taken out of context! Conan clip was a comedy skit, Oxford quote was about a technical circuit breaker issue, and "didn\'t go there" referred to budget constraints preventing return missions. Full Fact verified all contexts - Aldrin has consistently defended the moon landing for 50+ years.',
+    scientificSources: [sources[25], sources[26]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'buzz-aldrin-context-comprehensive',
+    conspiracyId: 'buzz-aldrin-out-of-context',
+    responseType: 'comprehensive',
+    content: 'Conspiracy theorists deliberately edit Buzz Aldrin\'s interviews to create false "confessions" by removing crucial context. The Conan O\'Brien "secret" was a satirical comedy skit where Aldrin jokingly claimed he and Neil Armstrong switched spacesuits for entertainment purposes. The Oxford Union quote about the moon journey "didn\'t happen" was specifically discussing a technical circuit breaker malfunction during the actual mission - he was explaining a specific challenge they overcame, not denying the landing. The "we didn\'t go there" comment to a young girl was about explaining why we stopped going to the moon due to financial constraints and shifting priorities, not denying the original missions. Full Fact\'s investigation confirms these deliberate misrepresentations. Aldrin has consistently defended the moon landing in hundreds of interviews over 50+ years, written books about the missions, and provided detailed technical accounts that match all other evidence.',
+    scientificSources: [sources[25], sources[26], sources[27], sources[28]],
+    effectiveness: 10,
+    lastUpdated: new Date('2024-01-01')
+  },
+  {
+    id: 'buzz-aldrin-context-educational',
+    conspiracyId: 'buzz-aldrin-out-of-context',
+    responseType: 'educational',
+    content: 'Quote mining analysis reveals systematic disinformation tactics used to misrepresent astronaut testimony. Contextual manipulation techniques include selective editing removing crucial explanatory context, isolating statements from satirical or hypothetical discussions, misrepresenting technical explanations as admissions of deception, and conflating current limitations with past accomplishments. Specific misquote analysis shows the Conan O\'Brien appearance was explicitly comedic entertainment where Aldrin participated in a scripted humorous segment about switching spacesuits, the Oxford Union presentation discussed technical challenges during the actual mission including circuit breaker malfunctions that the crew successfully resolved, and the interview with the young girl explained economic and political reasons for ending the Apollo program rather than denying the missions occurred. Fact-checking verification by Full Fact confirms these contextual explanations and identifies the systematic pattern of deliberate misrepresentation. Aldrin\'s consistent testimony includes detailed technical accounts matching mission documentation, authorship of multiple books describing lunar surface operations, participation in scientific conferences presenting mission data, and 50+ years of defending the moon landing across hundreds of interviews without contradiction. This demonstrates how disinformation campaigns exploit quote mining to create false narratives contradicting overwhelming evidence.',
+    scientificSources: [sources[25], sources[26], sources[27], sources[28]],
     effectiveness: 10,
     lastUpdated: new Date('2024-01-01')
   }
