@@ -19,7 +19,7 @@ export default function EvidencePage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1 bg-gray-50 pt-20">
         {/* Hero Section */}
         <section className="space-gradient text-white py-12 px-4">
           <div className="max-w-4xl mx-auto text-center">

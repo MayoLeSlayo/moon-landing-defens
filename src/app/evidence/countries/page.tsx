@@ -8,7 +8,7 @@ export default function CountriesPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1 bg-gray-50 pt-20">
         <section className="nebula-gradient text-white py-20 px-4">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-6xl md:text-7xl font-bold mb-6 stellar-text">30+ Countries Confirmed</h1>

@@ -22,7 +22,7 @@ export interface Source {
   title: string;
   url: string;
   organization: string;
-  type: 'nasa' | 'academic' | 'observatory' | 'government' | 'international';
+  type: 'nasa' | 'academic' | 'observatory' | 'government' | 'international' | 'museum' | 'scientific';
   credibilityScore: number;
   summary: string;
 }

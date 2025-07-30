@@ -68,7 +68,7 @@ export default function AdminPage() {
       <div className="min-h-screen flex flex-col">
         <Header />
         
-        <main className="flex-1 bg-gray-50 flex items-center justify-center">
+        <main className="flex-1 bg-gray-50 flex items-center justify-center pt-20">
           <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
             <div className="text-center mb-8">
               <h1 className="text-2xl font-bold text-gray-900 mb-2">Admin Login</h1>
@@ -110,13 +110,6 @@ export default function AdminPage() {
               </button>
             </form>
 
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <p className="text-sm text-gray-600 text-center">
-                <strong>Demo Credentials:</strong><br />
-                Email: admin@moondefense.com<br />
-                Password: apollo11
-              </p>
-            </div>
           </div>
         </main>
 
@@ -129,7 +122,7 @@ export default function AdminPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1 bg-gray-50 pt-20">
         <div className="max-w-6xl mx-auto px-4 py-8">
           {/* Header */}
           <div className="bg-white rounded-xl shadow-lg p-6 mb-8">

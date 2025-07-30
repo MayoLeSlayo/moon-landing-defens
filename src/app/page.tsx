@@ -19,10 +19,10 @@ export default function HomePage() {
         <section className="hero-space flex items-center justify-center px-6">
           <div className="hero-content max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
-              Defend <span className="gradient-text">Anything</span>
+              Defend <span className="gradient-text">Apollo</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
-              Your evidence and research partner, grounded in the scientific facts you trust, built with the latest space exploration discoveries.
+              Counter moon landing conspiracy theories with scientific evidence, expert analysis, and authoritative sources from the Apollo missions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
@@ -38,7 +38,7 @@ export default function HomePage() {
                 onClick={() => {
                   window.location.href = '/evidence';
                 }}
-                className="btn-modern btn-secondary"
+                className="btn-modern border-2 border-white text-white hover:bg-white hover:text-black"
               >
                 Explore Evidence
               </button>
