@@ -145,14 +145,14 @@ export default function EvidencePage({ params }: Props) {
             </h1>
             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 mb-6">
               <h2 className="text-xl font-semibold mb-3 text-red-200">❌ The Claim:</h2>
-              <p className="text-lg leading-relaxed">"{theory.claim}"</p>
+              <p className="text-lg leading-relaxed">&ldquo;{theory.claim}&rdquo;</p>
             </div>
             {theory.commonVariations.length > 0 && (
               <div className="text-gray-200">
                 <p className="font-semibold mb-2">Common variations of this claim:</p>
                 <ul className="list-disc list-inside space-y-1 text-sm">
                   {theory.commonVariations.map((variation, index) => (
-                    <li key={index}>"{variation}"</li>
+                    <li key={index}>&ldquo;{variation}&rdquo;</li>
                   ))}
                 </ul>
               </div>
