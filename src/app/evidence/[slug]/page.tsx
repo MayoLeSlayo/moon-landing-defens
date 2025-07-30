@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ResponseCard from '@/components/ResponseCard';
 import { conspiracyTheories, evidenceResponses, sources } from '@/data/conspiracies';
 import type { Metadata } from 'next';
 
@@ -168,45 +169,40 @@ export default function EvidencePage({ params }: Props) {
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">
                 
-                {/* Quick Answer */}
+                {/* Quick Comeback */}
                 {shortResponse && (
-                  <div className="bg-white rounded-xl shadow-lg p-8">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                        <span className="text-green-600 text-xl">✓</span>
-                      </div>
-                      <h2 className="text-2xl font-bold text-gray-900">Quick Answer</h2>
-                    </div>
-                    <div className="prose max-w-none">
-                      <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-wrap">
-                        {shortResponse.content}
-                      </p>
-                    </div>
-                  </div>
+                  <ResponseCard
+                    title="⚡ Quick Comeback"
+                    content={shortResponse.content}
+                    sources={shortResponse.scientificSources || []}
+                    bgColor="bg-gradient-to-r from-green-50 to-emerald-50"
+                    iconColor="text-green-600"
+                    icon="⚡"
+                  />
                 )}
 
-                {/* Comprehensive Analysis */}
+                {/* Extended Explanation */}
                 {comprehensiveResponse && (
-                  <div className="bg-white rounded-xl shadow-lg p-8">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Comprehensive Analysis</h2>
-                    <div className="prose max-w-none">
-                      <div className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-                        {comprehensiveResponse.content}
-                      </div>
-                    </div>
-                  </div>
+                  <ResponseCard
+                    title="📖 Extended Explanation"
+                    content={comprehensiveResponse.content}
+                    sources={comprehensiveResponse.scientificSources || []}
+                    bgColor="bg-gradient-to-r from-blue-50 to-indigo-50"
+                    iconColor="text-blue-600"
+                    icon="📖"
+                  />
                 )}
 
-                {/* Educational Context */}
+                {/* Full Breakdown */}
                 {educationalResponse && (
-                  <div className="bg-white rounded-xl shadow-lg p-8">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Educational Context</h2>
-                    <div className="prose max-w-none">
-                      <div className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-                        {educationalResponse.content}
-                      </div>
-                    </div>
-                  </div>
+                  <ResponseCard
+                    title="🔬 Full Breakdown"
+                    content={educationalResponse.content}
+                    sources={educationalResponse.scientificSources || []}
+                    bgColor="bg-gradient-to-r from-purple-50 to-violet-50"
+                    iconColor="text-purple-600"
+                    icon="🔬"
+                  />
                 )}
 
               </div>
