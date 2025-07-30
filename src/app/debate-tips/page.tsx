@@ -61,7 +61,7 @@ export default function DebateTipsPage() {
               {/* Section 3 */}
               <div className="border-l-4 border-purple-500 pl-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Stay Calm, Stay Cool</h2>
-                <p className="text-gray-700 mb-4">If you lose your temper, you lose credibility. No matter how outrageous someone else's claim may be, keep your tone professional, factual, and calm. A composed tone builds trust with your audience and subtly positions you as the more reasonable party.</p>
+                <p className="text-gray-700 mb-4">If you lose your temper, you lose credibility. No matter how outrageous someone else&apos;s claim may be, keep your tone professional, factual, and calm. A composed tone builds trust with your audience and subtly positions you as the more reasonable party.</p>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-gray-600">🔁 <em>Reminder: You don&apos;t need to respond instantly. Take time to think.</em></p>
                 </div>
@@ -69,14 +69,14 @@ export default function DebateTipsPage() {
 
               {/* Section 4 */}
               <div className="border-l-4 border-orange-500 pl-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Read, Don't React</h2>
-                <p className="text-gray-700 mb-4">Don't just skim — <em>read</em> what your opponent is saying. Are they venting? Asking a real question? Confused? Arguing for the sake of it? Understanding intent helps you respond with precision and empathy.</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Read, Don&apos;t React</h2>
+                <p className="text-gray-700 mb-4">Don&apos;t just skim — <em>read</em> what your opponent is saying. Are they venting? Asking a real question? Confused? Arguing for the sake of it? Understanding intent helps you respond with precision and empathy.</p>
                 <p className="text-gray-700">Responding thoughtfully — not impulsively — is your power move.</p>
               </div>
 
               {/* Section 5 */}
               <div className="border-l-4 border-red-500 pl-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Ask Questions, Don't Just Make Points</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Ask Questions, Don&apos;t Just Make Points</h2>
                 <p className="text-gray-700 mb-4">Instead of leading with accusations or rebuttals, try this:</p>
                 <div className="bg-gray-50 p-4 rounded-lg space-y-2 mb-4">
                   <p className="text-gray-600">&ldquo;What source are you using for that?&rdquo;</p>
@@ -104,7 +104,7 @@ export default function DebateTipsPage() {
 
               {/* Section 7 */}
               <div className="border-l-4 border-yellow-500 pl-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Don't Flood with Facts</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Don&apos;t Flood with Facts</h2>
                 <p className="text-gray-700 mb-4">Piling on links, PDFs, and stats might feel powerful — but it rarely works. Why?</p>
                 <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
                   <li>People shut down when overwhelmed.</li>
@@ -168,7 +168,7 @@ export default function DebateTipsPage() {
               {/* Final Thought */}
               <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-blue-500">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Final Thought</h2>
-                <p className="text-gray-700 mb-4">Debating effectively isn&apos;t just about being right. It's about <strong>being heard</strong>, <strong>being thoughtful</strong>, and <strong>leaving the door open for dialogue</strong>.</p>
+                <p className="text-gray-700 mb-4">Debating effectively isn&apos;t just about being right. It&apos;s about <strong>being heard</strong>, <strong>being thoughtful</strong>, and <strong>leaving the door open for dialogue</strong>.</p>
                 <p className="text-gray-700">Whether you&apos;re discussing the moon landings or any other hot topic, remember: the goal isn&apos;t to &ldquo;own&rdquo; someone. The goal is to <em>engage in a way that encourages learning and understanding</em> — even if that takes time.</p>
               </div>
 
