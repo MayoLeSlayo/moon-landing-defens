@@ -33,8 +33,8 @@ export default function ResponseCard({
   };
 
   const formatContent = (text: string) => {
-    // Add paragraph breaks for long text
-    const paragraphs = text.split('\n\n').filter(p => p.trim());
+    // Convert \\n to actual line breaks and split into paragraphs
+    const paragraphs = text.replace(/\\n/g, '\n').split('\n\n').filter(p => p.trim());
     const formattedParagraphs = paragraphs.map(paragraph => {
       // Bold important terms and numbers
       return paragraph
@@ -72,7 +72,7 @@ export default function ResponseCard({
       {/* Copy Buttons */}
       <div className="flex flex-wrap gap-3 mb-6">
         <button
-          onClick={() => copyToClipboard(content, 'text')}
+          onClick={() => copyToClipboard(content.replace(/\\n/g, '\n').replace(/\*\*(.*?)\*\*/g, '$1'), 'text')}
           className="px-4 py-2 bg-white text-gray-700 rounded-lg border hover:bg-gray-50 transition-colors text-sm font-medium shadow-sm"
         >
           {copiedType === 'text' ? '✓ Copied!' : '📝 Copy Text'}
@@ -84,7 +84,7 @@ export default function ResponseCard({
           {copiedType === 'links' ? '✓ Copied!' : '🔗 Copy Links'}
         </button>
         <button
-          onClick={() => copyToClipboard(`${content}\n\n${sourceLinks}`, 'both')}
+          onClick={() => copyToClipboard(`${content.replace(/\\n/g, '\n').replace(/\*\*(.*?)\*\*/g, '$1')}\n\n${sourceLinks}`, 'both')}
           className="px-4 py-2 bg-white text-gray-700 rounded-lg border hover:bg-gray-50 transition-colors text-sm font-medium shadow-sm"
         >
           {copiedType === 'both' ? '✓ Copied!' : '📋 Copy Both'}
