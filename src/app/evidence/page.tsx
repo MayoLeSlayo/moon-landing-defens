@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { conspiracyTheories, evidenceResponses, sources } from '@/data/conspiracies';
@@ -62,20 +63,15 @@ export default function EvidencePage() {
               {filteredConspiracies.map((conspiracy) => (
                 <div
                   key={conspiracy.id}
-                  className={`bg-white rounded-xl shadow-lg p-6 cursor-pointer border-l-4 transition-all ${
-                    selectedConspiracy === conspiracy.id
-                      ? 'border-apollo-blue shadow-xl'
-                      : 'border-gray-200 hover:border-apollo-blue hover:shadow-md'
-                  }`}
-                  onClick={() => setSelectedConspiracy(
-                    selectedConspiracy === conspiracy.id ? null : conspiracy.id
-                  )}
+                  className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-gray-200 hover:border-apollo-blue hover:shadow-md transition-all"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        {conspiracy.title}
-                      </h3>
+                      <Link href={`/evidence/${conspiracy.id}`} className="block hover:text-apollo-blue">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-apollo-blue transition-colors">
+                          {conspiracy.title}
+                        </h3>
+                      </Link>
                       <p className="text-gray-600 mb-3 italic">
                         &quot;{conspiracy.claim}&quot;
                       </p>
@@ -121,87 +117,61 @@ export default function EvidencePage() {
                       </ul>
                     </div>
                   )}
+
+                  {/* View Details Button */}
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <Link 
+                      href={`/evidence/${conspiracy.id}`}
+                      className="inline-flex items-center text-apollo-blue hover:text-blue-700 font-medium text-sm"
+                    >
+                      View detailed analysis →
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Evidence Responses */}
+            {/* Quick Links */}
             <div className="lg:sticky lg:top-8">
-              {selectedConspiracy ? (
-                <div className="bg-white rounded-xl shadow-lg p-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Evidence Responses</h2>
-                  
-                  {evidenceResponses
-                    .filter(r => r.conspiracyId === selectedConspiracy)
-                    .map((response) => (
-                      <div key={response.id} className="mb-6 p-4 bg-gray-50 rounded-lg">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-lg font-semibold capitalize text-gray-900">
-                            {response.responseType} Response
-                          </h4>
-                          <div className="flex items-center space-x-3">
-                            <span className="text-sm text-gray-600">
-                              Effectiveness: {response.effectiveness}/10
-                            </span>
-                            <button
-                              onClick={async () => {
-                                try {
-                                  await navigator.clipboard.writeText(response.content);
-                                  alert('Response copied to clipboard!');
-                                } catch (err) {
-                                  console.error('Failed to copy:', err);
-                                }
-                              }}
-                              className="bg-apollo-blue text-white px-3 py-1 rounded text-sm hover:bg-blue-700"
-                            >
-                              Copy
-                            </button>
-                          </div>
-                        </div>
-                        
-                        <div className="evidence-highlight mb-4">
-                          <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">
-                            {response.content}
-                          </p>
-                        </div>
-
-                        {/* Sources */}
-                        {response.scientificSources && response.scientificSources.length > 0 && (
-                          <div>
-                            <h5 className="text-sm font-semibold text-gray-700 mb-2">Sources:</h5>
-                            <div className="space-y-2">
-                              {response.scientificSources.map((source) => (
-                                <div key={source.id} className="bg-white p-3 rounded border">
-                                  <a
-                                    href={source.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-apollo-blue hover:text-blue-700 font-medium text-sm"
-                                  >
-                                    {source.title}
-                                  </a>
-                                  <p className="text-xs text-gray-600 mt-1">
-                                    {source.organization} • Credibility: {source.credibilityScore}/10
-                                  </p>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
+              <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                <div className="text-6xl mb-4">📚</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  Evidence Library
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Click on any conspiracy theory title to view comprehensive evidence, detailed analysis, and scientific sources.
+                </p>
+                
+                {/* Featured Categories */}
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900 text-sm">Browse by Category:</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {categories.slice(1).map((category) => (
+                      <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`px-3 py-2 rounded-lg text-sm capitalize transition-colors ${
+                          selectedCategory === category
+                            ? 'bg-apollo-blue text-white'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                      >
+                        {category}
+                      </button>
                     ))}
+                  </div>
                 </div>
-              ) : (
-                <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-                  <div className="text-6xl mb-4">🔍</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Select a Conspiracy Theory
-                  </h3>
-                  <p className="text-gray-600">
-                    Click on any conspiracy theory from the list to view detailed evidence responses and scientific sources.
-                  </p>
+
+                {/* AI Assistant Link */}
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <Link 
+                    href="/chat"
+                    className="block w-full bg-apollo-blue text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Ask AI Assistant
+                  </Link>
                 </div>
-              )}
+              </div>
             </div>
           </div>
 

@@ -4,47 +4,20 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ChatMessage } from '@/types';
+import { moonLandingAI } from '@/services/aiChat';
 
 export default function ChatPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: '1',
       role: 'assistant',
-      content: 'Hello! I\'m your Moon Landing Defense AI assistant. I have access to comprehensive evidence about the Apollo missions and can help you counter conspiracy theories. What would you like to know?',
+      content: 'Hello! I\'m your Moon Landing Defense AI assistant. I have access to comprehensive evidence about the Apollo missions and can help you counter 31 different conspiracy theories. I can handle both short questions like "why no return?" and detailed follow-ups. What would you like to know?',
       timestamp: new Date(),
       sources: []
     }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
-  // Mock AI response - in production this would call OpenAI/Claude API
-  const generateResponse = async (userMessage: string): Promise<string> => {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Simple keyword matching for demo
-    const lowerMessage = userMessage.toLowerCase();
-    
-    if (lowerMessage.includes('flag') || lowerMessage.includes('waving')) {
-      return "The \"waving flag\" is a classic misconception! There's no wind on the moon - that's exactly why the flag looks the way it does. The flag only appears to 'wave' when astronauts are physically moving it during setup, then it stops completely because there's no air to make it flutter. The flag has a horizontal rod at the top to keep it extended, and the wrinkles from being folded stay frozen in place because there's no atmosphere. If you watch the actual footage, whenever astronauts aren't touching the flag, it's perfectly motionless - exactly what you'd expect in a vacuum.";
-    }
-    
-    if (lowerMessage.includes('star') || lowerMessage.includes('sky')) {
-      return "The 'no stars' argument misunderstands basic photography. The lunar surface is extremely bright (like snow on a sunny day), and astronauts are brightly lit by direct sunlight. To photograph these bright subjects, cameras must use fast shutter speeds and small apertures, which makes dim stars invisible in the photos. It's like trying to photograph stars with your phone while standing under a bright streetlight - you won't see any stars even though they're there.";
-    }
-    
-    if (lowerMessage.includes('radiation') || lowerMessage.includes('van allen')) {
-      return "The Van Allen Belt claim shows a misunderstanding of radiation physics. Apollo missions spent about 1 hour total passing through the belts and received roughly 11.4 rems of radiation - equivalent to a few medical X-rays. The 'deadly radiation' myth comes from not understanding dosage vs. time. The spacecraft hull provides radiation shielding, and the belts are dangerous for PROLONGED exposure, not quick pass-throughs.";
-    }
-    
-    if (lowerMessage.includes('rock') || lowerMessage.includes('sample')) {
-      return "Moon rocks provide some of the strongest evidence! We have 842 pounds of lunar samples that have been analyzed by independent laboratories worldwide for 50+ years. These rocks have unique characteristics that can't be replicated on Earth: formed in a vacuum, different isotope ratios, no water content, unique mineral combinations, and micrometeorite impacts. The isotopic signatures are completely different from Earth rocks.";
-    }
-    
-    // Default response
-    return "I can help you with evidence about moon landing conspiracy theories. Try asking about specific claims like 'waving flags', 'no stars in photos', 'Van Allen radiation', 'moon rocks', 'shadows', or any other conspiracy theory you've encountered. I have detailed scientific responses backed by authoritative sources.";
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,14 +35,14 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      const response = await generateResponse(input);
+      const aiResponse = await moonLandingAI.generateResponse(userMessage.content, messages);
       
       const assistantMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: response,
+        content: aiResponse.content,
         timestamp: new Date(),
-        sources: [] // In production, this would include relevant sources
+        sources: aiResponse.sources
       };
 
       setMessages(prev => [...prev, assistantMessage]);
@@ -78,7 +51,7 @@ export default function ChatPage() {
       const errorMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: 'Sorry, I encountered an error. Please try again.',
+        content: 'I apologize, but I encountered an error. Please try asking your question again, or try rephrasing your question about moon landing conspiracy theories.',
         timestamp: new Date(),
         sources: []
       };
@@ -105,12 +78,38 @@ export default function ChatPage() {
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.map((message) => (
                 <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[80%] p-3 rounded-lg ${
+                  <div className={`max-w-[85%] p-3 rounded-lg ${
                     message.role === 'user' 
                       ? 'bg-apollo-blue text-white' 
                       : 'bg-gray-100 text-gray-900'
                   }`}>
-                    <p className="whitespace-pre-wrap">{message.content}</p>
+                    <div className="whitespace-pre-wrap" dangerouslySetInnerHTML={{
+                      __html: message.content.replace(
+                        /\*\*\[(.*?)\]\((.*?)\)\*\*/g,
+                        '<strong><a href="$2" class="text-blue-600 hover:text-blue-800 underline">$1</a></strong>'
+                      )
+                    }} />
+                    
+                    {/* Sources display for assistant messages */}
+                    {message.role === 'assistant' && message.sources && message.sources.length > 0 && (
+                      <div className="mt-3 pt-3 border-t border-gray-300">
+                        <p className="text-xs font-semibold text-gray-600 mb-2">Sources:</p>
+                        <div className="space-y-1">
+                          {message.sources.slice(0, 3).map((source: any, index: number) => (
+                            <a 
+                              key={index}
+                              href={source.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="block text-xs text-blue-600 hover:text-blue-800 hover:underline"
+                            >
+                              📄 {source.title} - {source.organization}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
                     <p className="text-xs mt-2 opacity-70">
                       {message.timestamp.toLocaleTimeString()}
                     </p>
@@ -139,7 +138,7 @@ export default function ChatPage() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask about a conspiracy theory..."
+                  placeholder="Try: 'why no return?', 'van allen radiation', 'flag waving', etc."
                   className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-apollo-blue focus:border-apollo-blue outline-none"
                   disabled={isLoading}
                 />
@@ -159,14 +158,22 @@ export default function ChatPage() {
             <h3 className="text-lg font-semibold mb-4 text-gray-900">Try asking about:</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
-                'Why is the flag waving?',
-                'Where are the stars?',
-                'Van Allen radiation belt',
-                'Moon rock evidence',
-                'Shadow directions',
-                'Lunar module design',
-                'Soviet Union tracking',
-                'Retroreflector experiments'
+                'Why haven\'t we returned?',
+                'Van Allen radiation',
+                'Flag waving',
+                'No stars in photos',
+                'Who filmed first step?',
+                'Shadows are wrong',
+                'Why didn\'t Russia expose it?',
+                'Live video in 1969?',
+                'No blast crater',
+                'Movements too normal',
+                'Missing data & footage',
+                'Whistleblowers say fake',
+                'Kubrick could\'ve faked it?',
+                'Moon rocks fake?',
+                'Buzz Aldrin quotes',
+                'Why did missions stop?'
               ].map((prompt) => (
                 <button
                   key={prompt}
