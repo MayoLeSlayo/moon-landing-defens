@@ -31,6 +31,9 @@ export default function Header() {
             <Link href="/evidence" className="text-white hover:text-gray-200 transition-colors font-medium">
               Evidence Library
             </Link>
+            <Link href="/debate-tips" className="text-white hover:text-gray-200 transition-colors font-medium">
+              Debate Tips
+            </Link>
             <Link href="/admin" className="text-white hover:text-gray-200 transition-colors font-medium">
               Admin
             </Link>
@@ -63,6 +66,9 @@ export default function Header() {
               </Link>
               <Link href="/evidence" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
                 Evidence Library
+              </Link>
+              <Link href="/debate-tips" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
+                Debate Tips
               </Link>
               <Link href="/admin" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
                 Admin
