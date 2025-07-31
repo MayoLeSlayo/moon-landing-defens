@@ -34,16 +34,39 @@ export default function ResponseCard({
 
   const formatContent = (text: string) => {
     // Convert \\n to actual line breaks and split into paragraphs
-    const paragraphs = text.replace(/\\n/g, '\n').split('\n\n').filter(p => p.trim());
-    const formattedParagraphs = paragraphs.map(paragraph => {
-      // Bold important terms and numbers
-      return paragraph
+    const content = text.replace(/\\n/g, '\n');
+    const sections = content.split('\n\n').filter(p => p.trim());
+    
+    const formattedSections = sections.map(section => {
+      const trimmed = section.trim();
+      
+      // Handle H3 headings (###)
+      if (trimmed.startsWith('### ')) {
+        const title = trimmed.replace('### ', '');
+        return `<h4 class="text-lg font-semibold text-gray-900 mt-6 mb-3">${title}</h4>`;
+      }
+      
+      // Handle H2 headings (##)
+      if (trimmed.startsWith('## ')) {
+        const title = trimmed.replace('## ', '');
+        return `<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">${title}</h3>`;
+      }
+      
+      // Handle regular paragraphs
+      let formatted = trimmed
+        // Handle inline links [text](url)
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-apollo-blue hover:text-blue-700 underline">$1</a>')
+        // Bold formatting
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        // Numbers with units
         .replace(/(\d+\.?\d*)\s*(rems?|pounds?|hours?|miles?|degrees?|percent|%)/gi, '<strong>$1 $2</strong>')
+        // Important terms
         .replace(/(NASA|Apollo|Van Allen|Saturn V|AGC|ISS|Earth|Moon|lunar)/g, '<strong>$1</strong>');
+      
+      return `<p class="mb-4 text-gray-700 leading-relaxed">${formatted}</p>`;
     });
     
-    return formattedParagraphs.map(p => `<p class="mb-4 text-gray-700 leading-relaxed">${p}</p>`).join('');
+    return formattedSections.join('');
   };
 
   const sourceLinks = sourcesData.map((sourceId, index) => {
@@ -72,7 +95,15 @@ export default function ResponseCard({
       {/* Copy Buttons */}
       <div className="flex flex-wrap gap-3 mb-6">
         <button
-          onClick={() => copyToClipboard(content.replace(/\\n/g, '\n').replace(/\*\*(.*?)\*\*/g, '$1'), 'text')}
+          onClick={() => copyToClipboard(
+            content
+              .replace(/\\n/g, '\n')
+              .replace(/## /g, '')
+              .replace(/### /g, '')
+              .replace(/\*\*(.*?)\*\*/g, '$1')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1'), 
+            'text'
+          )}
           className="px-4 py-2 bg-white text-gray-700 rounded-lg border hover:bg-gray-50 transition-colors text-sm font-medium shadow-sm"
         >
           {copiedType === 'text' ? '✓ Copied!' : '📝 Copy Text'}
@@ -84,7 +115,14 @@ export default function ResponseCard({
           {copiedType === 'links' ? '✓ Copied!' : '🔗 Copy Links'}
         </button>
         <button
-          onClick={() => copyToClipboard(`${content.replace(/\\n/g, '\n').replace(/\*\*(.*?)\*\*/g, '$1')}\n\n${sourceLinks}`, 'both')}
+          onClick={() => copyToClipboard(`${
+            content
+              .replace(/\\n/g, '\n')
+              .replace(/## /g, '')
+              .replace(/### /g, '')
+              .replace(/\*\*(.*?)\*\*/g, '$1')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+          }\n\n${sourceLinks}`, 'both')}
           className="px-4 py-2 bg-white text-gray-700 rounded-lg border hover:bg-gray-50 transition-colors text-sm font-medium shadow-sm"
         >
           {copiedType === 'both' ? '✓ Copied!' : '📋 Copy Both'}

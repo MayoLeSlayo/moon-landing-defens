@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { SearchResult, EvidenceResponse } from '@/types';
 
 interface SearchResultsProps {
@@ -92,6 +93,20 @@ export default function SearchResults({ results }: SearchResultsProps) {
                       {keyword}
                     </span>
                   ))}
+                </div>
+
+                {/* Dedicated Page Link */}
+                <div className="mb-4">
+                  <Link 
+                    href={`/evidence/${result.conspiracy.id}`}
+                    className="inline-flex items-center gap-2 bg-apollo-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md"
+                  >
+                    <span>📖</span>
+                    View Full Evidence Page
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
 
