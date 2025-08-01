@@ -2,9 +2,10 @@ export interface ConspiracyTheory {
   id: string;
   title: string;
   claim: string;
-  category: 'photography' | 'physics' | 'technology' | 'historical' | 'logical';
+  category: 'photography' | 'physics' | 'technology' | 'historical' | 'logical' | 'evidence' | 'filming' | 'conspiracy' | 'personalities';
   commonVariations: string[];
   tags: string[];
+  lastUpdated?: Date;
 }
 
 export interface EvidenceResponse {
