@@ -2013,10 +2013,11 @@ export const evidenceResponses: EvidenceResponse[] = [
   },
   // Telescopes Can't See Landing Sites - Short Response
   {
+    id: 'telescopes-cant-see-short',
     conspiracyId: 'telescopes-cant-see',
     responseType: 'short',
     content: 'Earth-based telescopes can\'t see Apollo equipment because of **fundamental physics limitations**. Even the largest telescopes can only resolve objects about **60 meters** across on the lunar surface, while the Apollo Lunar Module is only **4.2 meters wide**. To see Apollo equipment as even a single pixel would require a **75-meter telescope** - larger than any that exist. Earth\'s atmosphere makes this even harder, limiting resolution to **1.8 kilometers** on the Moon. The **Lunar Reconnaissance Orbiter** can photograph the sites because it orbits only **31 miles** above the Moon, nearly **8,000 times closer** than Earth.',
-    scientificSources: ['scientific-american-hubble', 'lro-images', 'royal-museums-greenwich'],
+    scientificSources: [sources.find(s => s.id === 'scientific-american-hubble')!, sources.find(s => s.id === 'lro-images')!, sources.find(s => s.id === 'royal-museums-greenwich')!],
     effectiveness: 9,
     lastUpdated: new Date('2024-01-01')
   },
