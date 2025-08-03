@@ -1,0 +1,15 @@
+
+> moon-landing-defense@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.0
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 1272ms
+ ○ Compiling / ...
+ ✓ Compiled / in 872ms (554 modules)
+ GET / 200 in 1079ms
+ ✓ Compiled in 147ms (259 modules)
+[?25h

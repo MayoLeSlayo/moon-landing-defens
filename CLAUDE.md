@@ -59,6 +59,28 @@ A Next.js 14 application providing evidence-based responses to moon landing cons
 - `npm start` - Start production server
 - `npm run lint` - Run linting
 
+### Development Server Startup Protocol
+**Issue:** Port conflicts can prevent server access even when it appears to start successfully.
+
+**Recommended Startup Process:**
+1. **Start server in background:** `cd /path/to/project && nohup npm run dev > server.log 2>&1 &`
+2. **Check what port is actually used:** `cat server.log` (look for port number)
+3. **Verify server is running:** `lsof -i :3000` or `lsof -i :3001` (check actual port)
+4. **Access correct URL:** Usually `http://localhost:3001` if 3000 is in use
+
+**Alternative Quick Start:**
+```bash
+cd "/Users/lebeast/Claude/MayoSlayo_Sites/moon-landing-defense"
+nohup npm run dev > server.log 2>&1 &
+sleep 3
+cat server.log | grep "Local:"  # Shows actual URL
+```
+
+**Port Conflict Resolution:**
+- Next.js automatically finds next available port (3001, 3002, etc.)
+- Always check server.log for the actual URL
+- Use `lsof -i :PORT` to see what's using a specific port
+
 ### Deployment
 - **Platform:** Netlify
 - **Build Command:** `npm install && npm run build` (configured in netlify.toml)
@@ -126,6 +148,50 @@ git push origin main  # Triggers Netlify deployment
 - **Deployment:** Netlify
 - **Node Version:** 18
 
+## Project Evolution & Migration Plans
+
+### August 2, 2025 - SQLite Migration Project
+**Current Status:** This directory (`moon-landing-defense`) contains the **ORIGINAL STATIC VERSION**
+- Uses static TypeScript data in `src/data/conspiracies.ts`
+- Fully functional and deployed to Netlify
+- **THIS VERSION SHOULD REMAIN UNCHANGED** as a working reference
+
+**New SQLite Version:** `moon-landing-defense-sqlite/`
+- Will be a separate directory with SQLite database
+- Same moon landing defense content, different data architecture
+- Allows safe experimentation without breaking working version
+- Can run simultaneously on different ports for comparison
+
+**Why Two Versions:**
+1. **Safety:** Preserve working static version
+2. **Comparison:** Test performance/functionality differences
+3. **Rollback:** Easy to revert if SQLite version has issues
+4. **Learning:** Study different architectural approaches
+
+**Directory Structure:**
+```
+MayoSlayo_Sites/
+├── moon-landing-defense/          # ← THIS DIRECTORY (static data)
+└── moon-landing-defense-sqlite/   # ← New SQLite version (to be created)
+```
+
+**Next Steps:**
+1. Create `moon-landing-defense-sqlite/` directory (copy of this project)
+2. Migrate static data to SQLite database
+3. Update data access patterns to use database queries
+4. Test and compare both versions
+
+## Issue Resolution Log
+
+### August 2, 2025 - Development Server Port Conflict
+**Problem:** Server appeared to start but was inaccessible at localhost:3000
+**Root Cause:** Port 3000 was in use, Next.js switched to 3001 but this wasn't clearly communicated
+**Solution:** 
+- Used background process with logging: `nohup npm run dev > server.log 2>&1 &`
+- Checked actual port in server.log
+- Server successfully running on localhost:3001
+**Prevention:** Added Development Server Startup Protocol to avoid future confusion
+
 ---
-*Last updated: August 1, 2025*
+*Last updated: August 2, 2025*
 *Next conversation can continue from this context*
