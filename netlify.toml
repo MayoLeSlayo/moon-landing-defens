@@ -2,6 +2,9 @@
   publish = ".next"
   command = "npm install && npm run build"
 
+[context.production]
+  branch = "main"
+
 [build.environment]
   NODE_VERSION = "18"
 
