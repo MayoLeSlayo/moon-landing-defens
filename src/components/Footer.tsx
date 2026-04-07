@@ -10,7 +10,7 @@ export default function Footer() {
               An evidence-based knowledge base dedicated to preserving the truth about humanity&apos;s greatest achievement - landing on the moon.
             </p>
             <a href="/creator" className="inline-block mt-4 text-gray-400 hover:text-white text-xs transition-colors">
-              The Creator
+              Contact or Contribute
             </a>
           </div>
 
@@ -42,7 +42,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a 
-                  href="https://www.nasa.gov/mission_pages/apollo/"
+                  href="https://www.nasa.gov/the-apollo-program/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
@@ -85,8 +85,11 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-apollo-blue mt-8 pt-8 text-center">
-          <p className="text-gray-300 text-sm">
-            © 2026 WereTheMoonLandingsReal.com — Dedicated to scientific truth and education.
+          <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
+            © 2026 WereTheMoonLandingsReal.com
+          </p>
+          <p className="text-gray-300 text-sm italic">
+            Dedicated to the Apollo 1 crew—Gus Grissom, Ed White, and Roger Chaffee—and to all those who risked their lives to achieve the first Moon landing.
           </p>
           <p className="text-gray-400 text-xs mt-2">
             &quot;That&apos;s one small step for man, one giant leap for mankind.&quot; - Neil Armstrong, July 20, 1969
