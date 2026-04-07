@@ -1,7 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'All 6 Apollo Moon Landings — Mission Timeline & Evidence',
+  description: 'Complete documented history of all six Apollo moon landings. Mission data, crew, scientific objectives, and independent verification for each mission.',
+  keywords: 'apollo missions timeline, all moon landings, apollo 11 12 14 15 16 17, how many times did we land on the moon',
+  openGraph: {
+    title: 'All 6 Apollo Moon Landings — Mission Timeline & Evidence',
+    description: 'Complete documented history of all six Apollo moon landings with independent verification.',
+  },
+};
 
 export default function MissionsPage() {
   const missions = [
@@ -15,10 +24,10 @@ export default function MissionsPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header transparent={true} />
       
-      <main className="flex-1 bg-gray-50 pt-20">
-        <section className="space-gradient text-white py-16 px-4">
+      <main className="flex-1 bg-gray-50">
+        <section className="page-hero text-white py-16 px-4 pt-28">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-4">6 Successful Moon Landings</h1>
             <p className="text-xl text-gray-200">

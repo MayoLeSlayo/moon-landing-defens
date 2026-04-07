@@ -1,17 +1,28 @@
-'use client';
 
+
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
+
+export const metadata: Metadata = {
+  title: 'Moon Landing Conspiracy Theories — All 31 Claims Examined',
+  description: 'Every moon landing conspiracy theory examined and debunked with scientific evidence. Waving flags, Van Allen radiation, missing stars, and more.',
+  keywords: 'moon landing conspiracy theories, apollo hoax claims, moon landing debunked, NASA conspiracy, apollo 11 fake claims',
+  openGraph: {
+    title: 'Moon Landing Conspiracy Theories — All 31 Claims Examined',
+    description: 'Every moon landing conspiracy theory examined and debunked with scientific evidence.',
+  },
+};
 import Footer from '@/components/Footer';
 import { conspiracyTheories } from '@/data/conspiracies';
 
 export default function ConspiraciesPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header transparent={true} />
       
-      <main className="flex-1 bg-gray-50 pt-20">
+      <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="space-gradient text-white py-12 px-4">
+        <section className="page-hero text-white py-12 px-4 pt-28">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">Common Conspiracy Theories</h1>
             <p className="text-xl text-gray-200">

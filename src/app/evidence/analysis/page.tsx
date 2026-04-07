@@ -1,15 +1,24 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Technical Analysis — Apollo Moon Landing Evidence',
+  description: 'In-depth technical analysis of the Apollo missions. Physics, engineering, and scientific examination of every moon landing conspiracy claim.',
+  keywords: 'apollo technical analysis, moon landing physics evidence, apollo engineering proof, scientific analysis moon landing',
+  openGraph: {
+    title: 'Technical Analysis — Apollo Moon Landing Evidence',
+    description: 'Physics, engineering, and scientific examination of every moon landing conspiracy claim.',
+  },
+};
 
 export default function AnalysisPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header transparent={true} />
       
-      <main className="flex-1 bg-gray-50 pt-20">
-        <section className="space-gradient text-white py-16 px-4">
+      <main className="flex-1 bg-gray-50">
+        <section className="page-hero text-white py-16 px-4 pt-28">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-4">50+ Years of Scientific Analysis</h1>
             <p className="text-xl text-gray-200">

@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function Header() {
+export default function Header({ transparent = false }: { transparent?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-r from-black to-gray-800">
+    <header className={`absolute top-0 left-0 right-0 z-50 ${transparent ? 'bg-transparent' : 'bg-gradient-to-r from-black to-gray-800'}`}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center py-6">
           {/* Logo */}
@@ -16,26 +16,21 @@ export default function Header() {
               <span className="text-white font-bold text-lg">🌙</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">Moon Landing Defense</h1>
+              <h1 className="text-xl font-bold text-white">Were The Moon Landings Real?</h1>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-gray-200 transition-colors font-medium">
+            <Link href="/#search" className="text-white hover:text-gray-200 transition-colors font-bold uppercase tracking-widest text-sm">
               Search
             </Link>
-            <Link href="/chat" className="text-white hover:text-gray-200 transition-colors font-medium">
-              AI Assistant
-            </Link>
-            <Link href="/evidence" className="text-white hover:text-gray-200 transition-colors font-medium">
+
+            <Link href="/evidence" className="text-white hover:text-gray-200 transition-colors font-bold uppercase tracking-widest text-sm">
               Evidence Library
             </Link>
-            <Link href="/debate-tips" className="text-white hover:text-gray-200 transition-colors font-medium">
+            <Link href="/debate-tips" className="text-white hover:text-gray-200 transition-colors font-bold uppercase tracking-widest text-sm">
               Debate Tips
-            </Link>
-            <Link href="/admin" className="text-white hover:text-gray-200 transition-colors font-medium">
-              Admin
             </Link>
           </nav>
 
@@ -58,20 +53,15 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-white border-opacity-20 bg-black bg-opacity-50 backdrop-blur-sm rounded-b-xl mt-4">
             <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/#search" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 font-bold uppercase tracking-widest text-sm" onClick={() => setIsMenuOpen(false)}>
                 Search
               </Link>
-              <Link href="/chat" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
-                AI Assistant
-              </Link>
-              <Link href="/evidence" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
+
+              <Link href="/evidence" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 font-bold uppercase tracking-widest text-sm" onClick={() => setIsMenuOpen(false)}>
                 Evidence Library
               </Link>
-              <Link href="/debate-tips" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/debate-tips" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 font-bold uppercase tracking-widest text-sm" onClick={() => setIsMenuOpen(false)}>
                 Debate Tips
-              </Link>
-              <Link href="/admin" className="text-white hover:text-gray-200 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10" onClick={() => setIsMenuOpen(false)}>
-                Admin
               </Link>
             </nav>
           </div>

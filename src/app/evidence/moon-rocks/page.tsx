@@ -1,25 +1,123 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FaqAccordion from '@/components/FaqAccordion';
+
+export const metadata: Metadata = {
+  title: '842 Pounds of Moon Rocks — Proof the Apollo Missions Were Real',
+  description: 'Moon rocks from Apollo missions have been independently analyzed by scientists in labs worldwide. Their unique properties — absent in any Earth rock — prove they came from the moon. Even Soviet and Chinese scientists agree.',
+  keywords: 'moon rocks evidence, apollo lunar samples, are moon rocks real, moon rock analysis proof, 842 pounds moon rocks, lunar samples apollo proof',
+  openGraph: {
+    title: '842 Pounds of Moon Rocks — Proof the Apollo Missions Were Real',
+    description: 'Independently analyzed by scientists worldwide — moon rocks prove Apollo happened.',
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do scientists know moon rocks are actually from the moon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moon rocks have multiple properties that are impossible to fake: they are completely anhydrous (no water in their crystal structures, unlike all Earth rocks), show micrometeorite impact damage from billions of years without atmospheric protection, have unique isotopic ratios, and show vacuum crystallization patterns. Independent labs on multiple continents — including Soviet Cold War rivals — have all confirmed these properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Could NASA have faked the moon rocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Moon rocks were distributed to scientists worldwide, including the Soviet Union during the height of the Cold War. Soviet geologists — who had every political motivation to expose a fake — analyzed the samples and never disputed their authenticity. Additionally, natural lunar meteorites found on Earth (from asteroid impacts on the Moon) have identical properties to Apollo samples, providing independent confirmation of what genuine lunar material looks like."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many moon rocks did Apollo bring back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The six Apollo landing missions brought back approximately 382 kilograms (842 pounds) of lunar material across 2,415 individual samples. These ranged from tiny soil samples to a 26-pound rock brought back by Apollo 17. They are stored at the Lunar Sample Laboratory Facility at Johnson Space Center and have been studied continuously since 1969."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes moon rocks different from Earth rocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Several key differences: (1) Complete absence of water in mineral crystal structures — all Earth rocks have trace water. (2) Micrometeorite impact craters visible under electron microscopes from 4+ billion years of unshielded space exposure. (3) Unique titanium and chromium isotope ratios inconsistent with any Earth formation process. (4) Evidence of vacuum crystallization in basalt minerals. (5) Paleomagnetic signatures from an ancient lunar magnetic field that no longer exists."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Have other countries confirmed Apollo moon rocks are real?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Soviet Union received Apollo samples and their geologists confirmed the lunar origin — despite being in direct geopolitical competition with the U.S. More recently, China's Chang'e 5 mission (2020) returned its own lunar samples, which have identical characteristics to Apollo samples. This modern independent verification from China puts the final nail in any faking theory."
+      }
+    }
+  ]
+};
+
+const faqItems = [
+  {
+    q: "How do scientists know moon rocks are actually from the moon?",
+    a: "Moon rocks have multiple properties that are impossible to fake: they are completely anhydrous (no water in their crystal structures, unlike all Earth rocks), show micrometeorite impact damage from billions of years without atmospheric protection, have unique isotopic ratios, and show vacuum crystallization patterns. Independent labs on multiple continents — including Soviet Cold War rivals — have all confirmed these properties."
+  },
+  {
+    q: "Could NASA have faked the moon rocks?",
+    a: "No. Moon rocks were distributed to scientists worldwide, including the Soviet Union during the height of the Cold War. Soviet geologists — who had every political motivation to expose a fake — analyzed the samples and never disputed their authenticity. Additionally, natural lunar meteorites found on Earth (from asteroid impacts on the Moon) have identical properties to Apollo samples, providing independent confirmation of what genuine lunar material looks like."
+  },
+  {
+    q: "How many moon rocks did Apollo bring back?",
+    a: "The six Apollo landing missions brought back approximately 382 kilograms (842 pounds) of lunar material across 2,415 individual samples. These ranged from tiny soil samples to a 26-pound rock brought back by Apollo 17. They are stored at the Lunar Sample Laboratory Facility at Johnson Space Center and have been studied continuously since 1969."
+  },
+  {
+    q: "What makes moon rocks different from Earth rocks?",
+    a: "Several key differences: (1) Complete absence of water in mineral crystal structures — all Earth rocks have trace water. (2) Micrometeorite impact craters visible under electron microscopes from 4+ billion years of unshielded space exposure. (3) Unique titanium and chromium isotope ratios inconsistent with any Earth formation process. (4) Evidence of vacuum crystallization in basalt minerals. (5) Paleomagnetic signatures from an ancient lunar magnetic field that no longer exists."
+  },
+  {
+    q: "Have other countries confirmed Apollo moon rocks are real?",
+    a: "Yes. The Soviet Union received Apollo samples and their geologists confirmed the lunar origin — despite being in direct geopolitical competition with the U.S. More recently, China's Chang'e 5 mission (2020) returned its own lunar samples, which have identical characteristics to Apollo samples. This modern independent verification from China puts the final nail in any faking theory."
+  }
+];
 
 export default function MoonRocksPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-      
-      <main className="flex-1 bg-gray-50 pt-20">
+      <Header transparent={true} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="space-gradient text-white py-16 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">842 Pounds of Moon Rocks</h1>
+        <section className="page-hero text-white py-16 px-4 pt-28">
+          <div className="page-hero-content max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">842 Pounds of Moon Rocks — Proof the Apollo Missions Were Real</h1>
             <p className="text-xl text-gray-200 leading-relaxed">
-              Comprehensive analysis of lunar samples proves extraterrestrial origin
+              Independently analyzed by scientists worldwide, including Cold War rivals. Every lab confirms the same thing: these rocks came from the moon.
             </p>
           </div>
         </section>
 
         <div className="max-w-6xl mx-auto px-4 py-12">
+
+          {/* Intro Block */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border-l-4 border-blue-500">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              The Soviet Union analyzed Apollo moon rocks — and confirmed they were real. You can&apos;t fake that.
+            </h2>
+            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              Six Apollo missions returned 842 pounds of lunar material in 2,415 individual samples. These weren&apos;t locked in a NASA vault — they were distributed to scientists worldwide, including the Soviet Union at the height of the Cold War. Soviet geologists had every political incentive to expose a fake. They never did, because the rocks are unmistakably not from Earth.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Moon rocks are completely anhydrous — not a trace of water in their crystal structures. Every Earth rock contains trace water. They carry micrometeorite impact scars from billions of years of unshielded space exposure. Their isotope ratios match no known Earth formation process. China&apos;s Chang&apos;e 5 mission (2020) returned independent lunar samples with identical properties. The evidence from multiple nations, across 55 years, is unanimous.
+            </p>
+          </div>
+
           {/* Key Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <div className="card-modern p-6 rounded-xl text-center">
@@ -43,7 +141,7 @@ export default function MoonRocksPage() {
           {/* Scientific Analysis */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Unique Characteristics Prove Lunar Origin</h2>
-            
+
             <div className="grid gap-6">
               <div className="evidence-highlight">
                 <h3 className="text-xl font-semibold mb-3">🔬 Isotopic Signatures</h3>
@@ -158,7 +256,7 @@ export default function MoonRocksPage() {
           {/* Comparison with Other Samples */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Confirmation from Other Sources</h2>
-            
+
             <div className="grid gap-6">
               <div className="p-6 border-l-4 border-evidence-green bg-green-50">
                 <h3 className="text-xl font-semibold mb-3">Luna Program Samples (Soviet Union)</h3>
@@ -186,7 +284,7 @@ export default function MoonRocksPage() {
           {/* Research Applications */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Ongoing Scientific Research</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Current Studies</h4>
@@ -198,7 +296,7 @@ export default function MoonRocksPage() {
                   <li>• Resource potential for future missions</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Future Applications</h4>
                 <ul className="space-y-2 text-gray-700">
@@ -212,10 +310,16 @@ export default function MoonRocksPage() {
             </div>
           </div>
 
+          {/* FAQ Section */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <FaqAccordion items={faqItems} />
+          </div>
+
           {/* Key Sources */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Authoritative Sources</h2>
-            
+
             <div className="space-y-4">
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold text-apollo-blue mb-2">

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${theory.title} - Moon Landing Evidence`,
       description,
       type: 'article',
-      siteName: 'Moon Landing Defense'
+      siteName: 'Were The Moon Landings Real?'
     },
     twitter: {
       card: 'summary_large_image',
@@ -96,7 +96,7 @@ export default function EvidencePage({ params }: Props) {
         "text": shortResponse?.content || "Scientific evidence contradicts this conspiracy theory claim.",
         "author": {
           "@type": "Organization",
-          "name": "Moon Landing Defense"
+          "name": "Were The Moon Landings Real?"
         }
       }
     }
@@ -104,7 +104,7 @@ export default function EvidencePage({ params }: Props) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header transparent={true} />
       
       {/* Structured Data */}
       <script
@@ -112,23 +112,18 @@ export default function EvidencePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       
-      <main className="flex-1 bg-gray-50 pt-20">
-        {/* Breadcrumb Navigation */}
-        <div className="bg-white border-b">
-          <div className="max-w-6xl mx-auto px-4 py-3">
-            <nav className="flex text-sm text-gray-600">
-              <Link href="/" className="hover:text-apollo-blue">Home</Link>
-              <span className="mx-2">/</span>
-              <Link href="/evidence" className="hover:text-apollo-blue">Evidence Library</Link>
-              <span className="mx-2">/</span>
-              <span className="text-gray-900">{theory.title}</span>
-            </nav>
-          </div>
-        </div>
-
+      <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="space-gradient text-white py-12 px-4">
+        <section className="page-hero text-white py-12 px-4 pt-20">
           <div className="max-w-6xl mx-auto">
+            {/* Breadcrumb */}
+            <nav className="flex text-xs font-bold tracking-widest uppercase text-white text-opacity-70 mb-6">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <span className="mx-2 opacity-50">/</span>
+              <Link href="/evidence" className="hover:text-white transition-colors">Evidence Library</Link>
+              <span className="mx-2 opacity-50">/</span>
+              <span className="opacity-70">{theory.title}</span>
+            </nav>
             <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm font-medium capitalize">
                 {theory.category}
@@ -172,7 +167,7 @@ export default function EvidencePage({ params }: Props) {
                 {/* Quick Comeback */}
                 {shortResponse && (
                   <ResponseCard
-                    title="⚡ Quick Comeback"
+                    title="Quick Comeback"
                     content={shortResponse.content}
                     sources={shortResponse.scientificSources || []}
                     bgColor="bg-gradient-to-r from-green-50 to-emerald-50"
@@ -184,7 +179,7 @@ export default function EvidencePage({ params }: Props) {
                 {/* Extended Explanation */}
                 {comprehensiveResponse && (
                   <ResponseCard
-                    title="📖 Extended Explanation"
+                    title="Extended Explanation"
                     content={comprehensiveResponse.content}
                     sources={comprehensiveResponse.scientificSources || []}
                     bgColor="bg-gradient-to-r from-blue-50 to-indigo-50"
@@ -196,7 +191,7 @@ export default function EvidencePage({ params }: Props) {
                 {/* Full Breakdown */}
                 {educationalResponse && (
                   <ResponseCard
-                    title="🔬 Full Breakdown"
+                    title="Full Breakdown"
                     content={educationalResponse.content}
                     sources={educationalResponse.scientificSources || []}
                     bgColor="bg-gradient-to-r from-purple-50 to-violet-50"

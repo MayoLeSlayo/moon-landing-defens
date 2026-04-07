@@ -1,24 +1,122 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FaqAccordion from '@/components/FaqAccordion';
+
+export const metadata: Metadata = {
+  title: 'Retroreflectors on the Moon — Active Proof the Apollo Landings Happened',
+  description: 'Laser retroreflectors placed on the moon by Apollo astronauts are actively used by observatories worldwide today. Scientists bounce lasers off them daily with millimeter precision — this alone proves the moon landing happened.',
+  keywords: 'retroreflectors moon landing proof, apollo laser reflectors, lunar retroreflector experiment, proof moon landing happened today, lunar laser ranging apollo',
+  openGraph: {
+    title: 'Retroreflectors on the Moon — Active Proof the Apollo Landings Happened',
+    description: 'Apollo retroreflectors are used by observatories worldwide today — undeniable proof the landings happened.',
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are lunar retroreflectors and why do they prove the moon landing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Retroreflectors are arrays of corner-cube prisms placed on the lunar surface by Apollo astronauts. They reflect laser beams directly back to their source with extreme precision. The fact that observatories worldwide can bounce lasers off exact points on the Moon corresponding to Apollo landing sites — and receive photons back within milliseconds — proves physical objects are there. No hoax could place equipment on the Moon without going there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Couldn't robotic probes have placed the retroreflectors without astronauts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Soviet Union tried exactly that — their Lunokhod rovers deployed two retroreflectors on the Moon. Those Soviet reflectors are still used today and are acknowledged by everyone. But acknowledging Soviet robotic missions proves that landing things on the Moon is real, and the Apollo retroreflectors are far larger and more precisely positioned than anything a 1960s robot could have deployed. Additionally, no one has ever suggested or documented a secret robotic Apollo program."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How precise are the measurements from Apollo retroreflectors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modern lunar laser ranging achieves millimeter-level precision — measuring the Earth-Moon distance (roughly 384,400 km) to within 1 millimeter. That's accuracy to 1 part in 384 billion. The Apache Point Observatory Lunar Laser-ranging Operation (APOLLO) achieves this routinely. This precision requires a physical retroreflector at the exact coordinates of the Apollo landing sites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which observatories are currently using the Apollo retroreflectors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiple independent observatories worldwide actively range off Apollo retroreflectors, including: Apache Point Observatory (APOLLO project) in New Mexico, Grasse Observatory in France, Matera Laser Ranging Observatory in Italy, Wettzell Observatory in Germany, and Haleakala Observatory in Hawaii. These are completely independent institutions in different countries with no connection to NASA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't you just bounce a laser off the bare lunar surface without a retroreflector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can — and astronomers did so before Apollo. But the return signal from bare lunar regolith scatters in all directions, returning about 1 photon per 100 billion fired. Apollo retroreflectors return a focused, precisely-timed signal orders of magnitude stronger. The difference in return signal between a retroreflector location and surrounding bare surface is measurable and confirms a physical device is there."
+      }
+    }
+  ]
+};
+
+const faqItems = [
+  {
+    q: "What are lunar retroreflectors and why do they prove the moon landing?",
+    a: "Retroreflectors are arrays of corner-cube prisms placed on the lunar surface by Apollo astronauts. They reflect laser beams directly back to their source with extreme precision. The fact that observatories worldwide can bounce lasers off exact points on the Moon corresponding to Apollo landing sites — and receive photons back within milliseconds — proves physical objects are there. No hoax could place equipment on the Moon without going there."
+  },
+  {
+    q: "Couldn't robotic probes have placed the retroreflectors without astronauts?",
+    a: "The Soviet Union tried exactly that — their Lunokhod rovers deployed two retroreflectors on the Moon. Those Soviet reflectors are still used today and are acknowledged by everyone. But acknowledging Soviet robotic missions proves that landing things on the Moon is real, and the Apollo retroreflectors are far larger and more precisely positioned than anything a 1960s robot could have deployed. Additionally, no one has ever suggested or documented a secret robotic Apollo program."
+  },
+  {
+    q: "How precise are the measurements from Apollo retroreflectors?",
+    a: "Modern lunar laser ranging achieves millimeter-level precision — measuring the Earth-Moon distance (roughly 384,400 km) to within 1 millimeter. That's accuracy to 1 part in 384 billion. The Apache Point Observatory Lunar Laser-ranging Operation (APOLLO) achieves this routinely. This precision requires a physical retroreflector at the exact coordinates of the Apollo landing sites."
+  },
+  {
+    q: "Which observatories are currently using the Apollo retroreflectors?",
+    a: "Multiple independent observatories worldwide actively range off Apollo retroreflectors, including: Apache Point Observatory (APOLLO project) in New Mexico, Grasse Observatory in France, Matera Laser Ranging Observatory in Italy, Wettzell Observatory in Germany, and Haleakala Observatory in Hawaii. These are completely independent institutions in different countries with no connection to NASA."
+  },
+  {
+    q: "Why can't you just bounce a laser off the bare lunar surface without a retroreflector?",
+    a: "You can — and astronomers did so before Apollo. But the return signal from bare lunar regolith scatters in all directions, returning about 1 photon per 100 billion fired. Apollo retroreflectors return a focused, precisely-timed signal orders of magnitude stronger. The difference in return signal between a retroreflector location and surrounding bare surface is measurable and confirms a physical device is there."
+  }
+];
 
 export default function RetroreflectorsPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-      
-      <main className="flex-1 bg-gray-50 pt-20">
-        <section className="hero-space text-white py-20 px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 stellar-text">Retroreflectors Active Today</h1>
+      <Header transparent={true} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <main className="flex-1 bg-gray-50">
+        <section className="page-hero text-white py-20 px-4 pt-28">
+          <div className="page-hero-content max-w-5xl mx-auto text-center">
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 stellar-text">Retroreflectors on the Moon — Active Proof the Apollo Landings Happened</h1>
             <p className="text-2xl text-gray-100 font-light leading-relaxed">
-              Scientists bounce lasers off Apollo equipment RIGHT NOW with millimeter precision
+              Scientists bounce lasers off Apollo equipment RIGHT NOW with millimeter precision. Any observatory in the world can verify this today — and dozens do.
             </p>
           </div>
         </section>
 
         <div className="max-w-6xl mx-auto px-4 py-12">
+
+          {/* Intro Block */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border-l-4 border-blue-500">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              You can verify the moon landings happened right now — with a laser and a telescope.
+            </h2>
+            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              Apollo 11, 14, and 15 astronauts left retroreflector arrays on the lunar surface — precision instruments that bounce laser light directly back to its source. Since 1969, observatories on every continent have fired lasers at the Moon and received return pulses from the exact coordinates of the Apollo landing sites. This isn&apos;t a historical claim. It&apos;s happening today.
+            </p>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              The measurement precision is now 1 millimeter over a 384,000-kilometer distance. That&apos;s not a rounding error — it&apos;s 1 part in 384 billion. Faking this from Earth is physically impossible. The retroreflectors are there because Apollo astronauts put them there.
+            </p>
+          </div>
+
           {/* Key Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <div className="glass-morphism cosmic-glow p-6 rounded-xl text-center">
@@ -42,7 +140,7 @@ export default function RetroreflectorsPage() {
           {/* Current Active Proof */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Real-Time Verification Happening Now</h2>
-            
+
             <div className="grid gap-6">
               <div className="evidence-highlight">
                 <h3 className="text-xl font-semibold mb-3">🔬 Active Scientific Experiments</h3>
@@ -105,7 +203,7 @@ export default function RetroreflectorsPage() {
           {/* Technical Details */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Retroreflector Arrays on the Moon</h2>
-            
+
             <div className="grid gap-6">
               <div className="p-6 border-l-4 border-evidence-green bg-green-50">
                 <h3 className="text-xl font-semibold mb-3">Apollo 11 Array</h3>
@@ -151,7 +249,7 @@ export default function RetroreflectorsPage() {
           {/* Scientific Applications */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Current Scientific Research</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Fundamental Physics</h4>
@@ -163,7 +261,7 @@ export default function RetroreflectorsPage() {
                   <li>• Measuring Earth&apos;s rotation variations</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Ongoing Research</h4>
                 <ul className="space-y-2 text-gray-700">
@@ -177,10 +275,16 @@ export default function RetroreflectorsPage() {
             </div>
           </div>
 
+          {/* FAQ Section */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <FaqAccordion items={faqItems} />
+          </div>
+
           {/* Key Sources */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Authoritative Sources</h2>
-            
+
             <div className="space-y-4">
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold text-apollo-blue mb-2">

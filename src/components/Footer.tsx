@@ -5,10 +5,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Moon Landing Defense</h3>
+            <h3 className="text-lg font-semibold mb-4">Were The Moon Landings Real?</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               An evidence-based knowledge base dedicated to preserving the truth about humanity&apos;s greatest achievement - landing on the moon.
             </p>
+            <a href="/creator" className="inline-block mt-4 text-gray-400 hover:text-white text-xs transition-colors">
+              The Creator
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -28,11 +31,6 @@ export default function Footer() {
               <li>
                 <a href="/sources" className="text-gray-300 hover:text-white transition-colors">
                   Scientific Sources
-                </a>
-              </li>
-              <li>
-                <a href="/chat" className="text-gray-300 hover:text-white transition-colors">
-                  AI Assistant
                 </a>
               </li>
             </ul>
@@ -88,7 +86,7 @@ export default function Footer() {
 
         <div className="border-t border-apollo-blue mt-8 pt-8 text-center">
           <p className="text-gray-300 text-sm">
-            © 2024 Moon Landing Defense System. Dedicated to scientific truth and education.
+            © 2024 WereTheMoonLandingsReal.com — Dedicated to scientific truth and education.
           </p>
           <p className="text-gray-400 text-xs mt-2">
             &quot;That&apos;s one small step for man, one giant leap for mankind.&quot; - Neil Armstrong, July 20, 1969

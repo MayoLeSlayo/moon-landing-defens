@@ -1,8 +1,17 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { sources } from '@/data/conspiracies';
+
+export const metadata: Metadata = {
+  title: 'Scientific Sources — Moon Landing Evidence',
+  description: 'Verified scientific sources cited across this site — NASA, Jodrell Bank, Smithsonian, peer-reviewed journals, and independent space agencies.',
+  keywords: 'moon landing scientific sources, apollo missions evidence, NASA documentation, peer reviewed moon landing research',
+  openGraph: {
+    title: 'Scientific Sources — Moon Landing Evidence',
+    description: 'Verified scientific sources: NASA, Jodrell Bank, Smithsonian, and peer-reviewed journals.',
+  },
+};
 
 export default function SourcesPage() {
   const sourcesByType = sources.reduce((acc, source) => {
@@ -23,11 +32,11 @@ export default function SourcesPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header transparent={true} />
       
-      <main className="flex-1 bg-gray-50 pt-20">
+      <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="space-gradient text-white py-12 px-4">
+        <section className="page-hero text-white py-12 px-4 pt-28">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">Scientific Sources</h1>
             <p className="text-xl text-gray-200">

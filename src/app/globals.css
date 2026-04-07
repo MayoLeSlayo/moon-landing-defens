@@ -23,43 +23,54 @@ body {
 
 /* Modern Clean Design System */
 .hero-space {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background-image: url('/images/space.jpg');
+  background-size: cover;
+  background-position: center;
   position: relative;
-  min-height: 80vh;
+  min-height: 90vh;
+}
+
+.hero-space::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
 }
 
 .space-gradient {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
 
-.hero-space::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.page-hero {
   background-image: url('/images/space.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.2;
+  position: relative;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
   z-index: 0;
 }
 
-.hero-space::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+.page-hero > * {
+  position: relative;
   z-index: 1;
 }
 
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .gradient-text {
