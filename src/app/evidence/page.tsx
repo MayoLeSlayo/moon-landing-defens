@@ -4,11 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SearchBar from '@/components/SearchBar';
+import SearchResults from '@/components/SearchResults';
 import { conspiracyTheories, evidenceResponses, sources } from '@/data/conspiracies';
+import { SearchResult } from '@/types';
 
 export default function EvidencePage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedConspiracy, setSelectedConspiracy] = useState<string | null>(null);
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
 
   const categories = ['all', 'physics', 'photography', 'technology', 'historical', 'logical'];
   
@@ -28,8 +32,19 @@ export default function EvidencePage() {
             <p className="text-xl text-gray-200 page-subtitle">
               Comprehensive collection of scientific evidence and expert responses to conspiracy theories
             </p>
+            <div className="mt-10 mb-4">
+              <SearchBar onResults={setSearchResults} showSuggestions={false} />
+            </div>
           </div>
         </section>
+
+        {searchResults.length > 0 && (
+          <section className="py-8 px-6 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <SearchResults results={searchResults} />
+            </div>
+          </section>
+        )}
 
         <div className="max-w-7xl mx-auto px-4 py-8">
           {/* Category Filter */}
@@ -162,15 +177,6 @@ export default function EvidencePage() {
                   </div>
                 </div>
 
-                {/* AI Assistant Link */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <Link 
-                    href="/chat"
-                    className="block w-full bg-apollo-blue text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    Ask AI Assistant
-                  </Link>
-                </div>
               </div>
             </div>
           </div>

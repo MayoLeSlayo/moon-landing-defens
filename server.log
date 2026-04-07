@@ -6,62 +6,16 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 1269ms
+ ✓ Ready in 1177ms
  ○ Compiling / ...
 Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
   npx update-browserslist-db@latest
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
- ✓ Compiled / in 1744ms (562 modules)
- GET / 200 in 2001ms
- ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 1083ms (551 modules)
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 982ms
- ✓ Compiled /evidence/images-videos-prove-moon-landings in 202ms (600 modules)
- ⨯ Error: Image Optimization using the default loader is not compatible with `{ output: 'export' }`.
-  Possible solutions:
-    - Remove `{ output: 'export' }` and run "next start" to run server mode including the Image Optimization API.
-    - Configure `{ images: { unoptimized: true } }` in `next.config.js` to disable the Image Optimization API.
-  Read more: https://nextjs.org/docs/messages/export-image-api
-digest: "971505992"
- GET /evidence/images-videos-prove-moon-landings/ 500 in 312ms
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
- ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
-  ▲ Next.js 14.2.0
-  - Local:        http://localhost:3000
-
- ✓ Starting...
- ✓ Ready in 1413ms
- ○ Compiling / ...
-Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
-  npx update-browserslist-db@latest
-  Why you should do it regularly: https://github.com/browserslist/update-db#readme
- ✓ Compiled / in 1592ms (562 modules)
- GET / 200 in 1834ms
- ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 1145ms (551 modules)
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1024ms
- ✓ Compiled /evidence/countries-confirmed-60s-moon-landings in 163ms (563 modules)
- ✓ Compiled /evidence/images-videos-prove-moon-landings in 204ms (604 modules)
- ✓ Compiled /evidence in 127ms (610 modules)
- ✓ Compiled /evidence/retroreflectors in 143ms (612 modules)
- GET /evidence/retroreflectors/ 200 in 257ms
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 29ms
- ✓ Compiled /debate-tips in 134ms (614 modules)
- ✓ Compiled /evidence/workforce in 146ms (616 modules)
- ✓ Compiled in 499ms (620 modules)
- ✓ Compiled in 171ms (620 modules)
- ✓ Compiled in 157ms (620 modules)
- ✓ Compiled in 119ms (283 modules)
- ✓ Compiled in 118ms (283 modules)
- ✓ Compiled in 235ms (620 modules)
- ✓ Compiled in 190ms (620 modules)
- ✓ Compiled in 230ms (620 modules)
- GET /evidence/workforce/ 200 in 108ms
- ✓ Compiled /_not-found in 377ms (609 modules)
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 440ms
- GET /evidence/workforce/ 200 in 55ms
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 15ms
- ✓ Compiled /evidence/moon-rocks in 135ms (611 modules)
- ✓ Compiled /evidence/countries-confirmed-60s-moon-landings in 84ms (342 modules)
- ✓ Compiled / in 94ms (347 modules)
+ ✓ Compiled / in 1718ms (562 modules)
+ GET / 200 in 1943ms
+ ✓ Compiled in 177ms (262 modules)
+ ✓ Compiled /evidence in 177ms (557 modules)
+ ✓ Compiled /evidence/[slug] in 155ms (574 modules)
+ ✓ Compiled /debate-tips in 125ms (578 modules)
+ ✓ Compiled in 220ms (592 modules)
 [?25h

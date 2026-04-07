@@ -4,14 +4,14 @@ import ChatWidget from '@/components/ChatWidget'
 import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
-  title: 'Were The Moon Landings Real? — The Evidence',
+  title: 'Were The Moon Landings Real? — Defend Apollo',
   description: 'Did we land on the moon? Explore the science, sources, and evidence behind every moon landing conspiracy theory — and why they\'re wrong.',
   keywords: 'were the moon landings real, did we land on the moon, moon landing hoax, apollo conspiracy theory, moon landing evidence, was the moon landing faked',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'Were The Moon Landings Real? — The Evidence',
+    title: 'Were The Moon Landings Real? — Defend Apollo',
     description: 'Did we land on the moon? Explore the science behind every moon landing conspiracy theory.',
     siteName: 'Were The Moon Landings Real?',
     type: 'website',

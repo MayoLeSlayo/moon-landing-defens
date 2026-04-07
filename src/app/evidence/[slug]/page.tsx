@@ -261,19 +261,6 @@ export default function EvidencePage({ params }: Props) {
                   </div>
                 )}
 
-                {/* Ask AI Assistant */}
-                <div className="bg-apollo-blue text-white rounded-xl shadow-lg p-6">
-                  <h3 className="text-xl font-bold mb-4">Need More Help?</h3>
-                  <p className="text-gray-200 mb-4 text-sm">
-                    Ask our AI assistant for personalized responses or follow-up questions about this claim.
-                  </p>
-                  <Link 
-                    href={`/chat?q=${encodeURIComponent(theory.title)}`}
-                    className="block w-full bg-white text-apollo-blue text-center py-2 px-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-                  >
-                    Ask AI Assistant
-                  </Link>
-                </div>
 
               </div>
             </div>

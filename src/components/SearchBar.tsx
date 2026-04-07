@@ -7,9 +7,10 @@ import { SearchEngine } from '@/lib/search';
 interface SearchBarProps {
   onResults: (results: SearchResult[]) => void;
   placeholder?: string;
+  showSuggestions?: boolean;
 }
 
-export default function SearchBar({ onResults, placeholder = "Search conspiracy theories or enter a claim..." }: SearchBarProps) {
+export default function SearchBar({ onResults, placeholder = "Search conspiracy theories or enter a claim...", showSuggestions = true }: SearchBarProps) {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const searchEngine = new SearchEngine();
@@ -88,7 +89,7 @@ export default function SearchBar({ onResults, placeholder = "Search conspiracy 
       </div>
       
       {/* Quick suggestions */}
-      <div className="mt-8 flex flex-wrap gap-3 justify-center">
+      {showSuggestions && <div className="mt-8 flex flex-wrap gap-3 justify-center">
         <span className="text-sm text-gray-600 mr-2 flex items-center">Try:</span>
         {['waving flag', 'no stars', 'radiation belt', 'shadows', 'moon rocks'].map((suggestion) => (
           <button
@@ -102,7 +103,7 @@ export default function SearchBar({ onResults, placeholder = "Search conspiracy 
             {suggestion}
           </button>
         ))}
-      </div>
+      </div>}
     </form>
   );
 }
