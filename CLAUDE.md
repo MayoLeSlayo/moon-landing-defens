@@ -3,6 +3,25 @@
 ## Project Overview
 A Next.js 14 application providing evidence-based responses to moon landing conspiracy theories. Built with TypeScript and deployed on Netlify.
 
+## Deployment
+
+**Platform:** Vultr VPS at 149.28.96.20, managed by GridPane. Static Next.js export served by nginx.
+**SSH key:** `~/.ssh/gridpane_new`
+**Web root:** `/var/www/werethemoonlandingsreal.com/htdocs/`
+
+To deploy:
+```bash
+./deploy.sh
+# or from anywhere:
+moonit
+```
+
+`deploy.sh` stops the dev server, builds locally (`out/`), rsyncs to server, commits and pushes to GitHub.
+
+**Never run `npm run build` while `npm run dev` is active** — it corrupts `.next/` and breaks the dev server. `deploy.sh` handles this automatically.
+
+---
+
 ## Recent Progress (August 1, 2025)
 
 ### 🚨 CRITICAL BUG FIX - READ THIS FIRST! 🚨
