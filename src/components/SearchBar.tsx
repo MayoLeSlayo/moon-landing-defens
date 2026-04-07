@@ -70,7 +70,7 @@ export default function SearchBar({ onResults, placeholder = "Search conspiracy 
           value={query}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full pl-16 pr-28 py-6 text-xl border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 bg-white shadow-lg"
+          className="w-full pl-16 pr-28 py-6 text-xl text-gray-900 placeholder-gray-400 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 bg-white shadow-lg"
         />
         
         <div className="absolute inset-y-0 right-0 pr-6 flex items-center">

@@ -6,16 +6,13 @@
   - Local:        http://localhost:3000
 
  ✓ Starting...
- ✓ Ready in 1177ms
+ ✓ Ready in 1286ms
  ○ Compiling / ...
 Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
   npx update-browserslist-db@latest
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
- ✓ Compiled / in 1718ms (562 modules)
- GET / 200 in 1943ms
- ✓ Compiled in 177ms (262 modules)
- ✓ Compiled /evidence in 177ms (557 modules)
- ✓ Compiled /evidence/[slug] in 155ms (574 modules)
- ✓ Compiled /debate-tips in 125ms (578 modules)
- ✓ Compiled in 220ms (592 modules)
+ ✓ Compiled / in 1797ms (562 modules)
+ GET / 200 in 2059ms
+ ✓ Compiled in 190ms (262 modules)
+ ✓ Compiled /evidence in 229ms (557 modules)
 [?25h
