@@ -93,9 +93,9 @@ export default function RetroreflectorsPage() {
       />
 
       <main className="flex-1 bg-gray-50">
-        <section className="page-hero text-white py-20 px-4 pt-28">
+        <section className="page-hero text-white hero-section-lg px-4">
           <div className="page-hero-content max-w-5xl mx-auto text-center">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 stellar-text">Retroreflectors on the Moon — Active Proof the Apollo Landings Happened</h1>
+            <h1 className="hero-h1-lg stellar-text">Retroreflectors on the Moon — Active Proof the Apollo Landings Happened</h1>
             <p className="text-2xl text-gray-100 font-light leading-relaxed">
               Scientists bounce lasers off Apollo equipment RIGHT NOW with millimeter precision. Any observatory in the world can verify this today — and dozens do.
             </p>

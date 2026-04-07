@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import ChatWidget from '@/components/ChatWidget'
+import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
   title: 'Were The Moon Landings Real? — The Evidence',
@@ -29,12 +30,14 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', { analytics_storage: 'denied' });
           gtag('js', new Date());
           gtag('config', 'G-SZWVTLGCN0');
         `}} />
       </head>
       <body className="antialiased">
         {children}
+        <CookieBanner />
         <ChatWidget />
       </body>
     </html>

@@ -18,10 +18,10 @@ export default function CreatorPage() {
 
       <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="page-hero text-white py-16 px-4 pt-28">
+        <section className="page-hero text-white page-hero-standard px-4">
           <div className="page-hero-content max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">The Creator</h1>
-            <p className="text-xl text-gray-200">The mind behind Were The Moon Landings Real?</p>
+            <h1 className="page-title">The Creator</h1>
+            <p className="text-xl text-gray-200 page-subtitle">The mind behind Were The Moon Landings Real?</p>
           </div>
         </section>
 

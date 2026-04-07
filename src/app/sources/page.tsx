@@ -36,10 +36,10 @@ export default function SourcesPage() {
       
       <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="page-hero text-white py-12 px-4 pt-28">
+        <section className="page-hero text-white page-hero-standard px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Scientific Sources</h1>
-            <p className="text-xl text-gray-200">
+            <h1 className="page-title">Scientific Sources</h1>
+            <p className="text-xl text-gray-200 page-subtitle">
               Authoritative sources and references backing our evidence responses
             </p>
           </div>

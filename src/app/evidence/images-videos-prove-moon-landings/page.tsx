@@ -106,9 +106,9 @@ export default function ApolloPhotosPage() {
       />
 
       <main className="flex-1 bg-gray-50">
-        <section className="page-hero text-white py-20 px-4 pt-28">
+        <section className="page-hero text-white hero-section-lg px-4">
           <div className="page-hero-content max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 stellar-text">Apollo Photos and Videos That Prove the Moon Landings Were Real</h1>
+            <h1 className="hero-h1-lg stellar-text">Apollo Photos and Videos That Prove the Moon Landings Were Real</h1>
             <p className="text-2xl text-gray-100 font-light leading-relaxed">
               Every &quot;suspicious&quot; detail in these images has a simple scientific explanation. The Moon is not Earth — and once you understand that, the photos make perfect sense.
             </p>

@@ -27,10 +27,10 @@ export default function MissionsPage() {
       <Header transparent={true} />
       
       <main className="flex-1 bg-gray-50">
-        <section className="page-hero text-white py-16 px-4 pt-28">
+        <section className="page-hero text-white page-hero-standard px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-4">6 Successful Moon Landings</h1>
-            <p className="text-xl text-gray-200">
+            <h1 className="page-title">6 Successful Moon Landings</h1>
+            <p className="text-xl text-gray-200 page-subtitle">
               Six crewed missions successfully landed on and returned from the moon
             </p>
           </div>

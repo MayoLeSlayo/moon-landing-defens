@@ -57,9 +57,9 @@ export default function CountriesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       <main className="flex-1 bg-gray-50">
-        <section className="page-hero text-white py-20 px-4 pt-28">
+        <section className="page-hero text-white hero-section-lg px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 stellar-text">30+ Countries Confirmed the 60s Moon Landings</h1>
+            <h1 className="hero-h1-lg stellar-text">30+ Countries Confirmed the 60s Moon Landings</h1>
             <p className="text-xl text-gray-200 font-light leading-relaxed max-w-3xl mx-auto">
               When America landed on the moon in 1969, the world was watching — including its enemies. Allies, rivals, and neutral nations alike independently tracked, recorded, and confirmed the Apollo missions in real time. This is their testimony.
             </p>

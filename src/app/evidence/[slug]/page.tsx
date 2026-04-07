@@ -114,7 +114,7 @@ export default function EvidencePage({ params }: Props) {
       
       <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="page-hero text-white py-12 px-4 pt-20">
+        <section className="page-hero text-white page-hero-standard px-4">
           <div className="max-w-6xl mx-auto">
             {/* Breadcrumb */}
             <nav className="flex text-xs font-bold tracking-widest uppercase text-white text-opacity-70 mb-6">
@@ -136,7 +136,7 @@ export default function EvidencePage({ params }: Props) {
                 ))}
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="page-title mb-6 leading-tight">
               {theory.title}
             </h1>
             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 mb-6">

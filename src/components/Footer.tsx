@@ -86,7 +86,7 @@ export default function Footer() {
 
         <div className="border-t border-apollo-blue mt-8 pt-8 text-center">
           <p className="text-gray-300 text-sm">
-            © 2024 WereTheMoonLandingsReal.com — Dedicated to scientific truth and education.
+            © 2026 WereTheMoonLandingsReal.com — Dedicated to scientific truth and education.
           </p>
           <p className="text-gray-400 text-xs mt-2">
             &quot;That&apos;s one small step for man, one giant leap for mankind.&quot; - Neil Armstrong, July 20, 1969

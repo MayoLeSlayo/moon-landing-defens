@@ -182,7 +182,7 @@ export default function HomePage() {
                     color: "emerald"
                   },
                   {
-                    title: "The Photos and Videos Are Real",
+                    title: "Impossible to Fake the Footage",
                     description: "Every 'suspicious' detail in Apollo photography — sharp shadows, lit astronauts, diverging shadows — is explained by simple lunar physics with no atmosphere",
                     icon: "📷",
                     color: "blue"

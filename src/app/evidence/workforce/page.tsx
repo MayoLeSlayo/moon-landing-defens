@@ -93,9 +93,9 @@ export default function WorkforcePage() {
       />
 
       <main className="flex-1 bg-gray-50">
-        <section className="page-hero text-white py-20 px-4 pt-28">
+        <section className="page-hero text-white hero-section-lg px-4">
           <div className="page-hero-content max-w-5xl mx-auto text-center">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 stellar-text">400,000 People Worked on Apollo — That&apos;s Why It Can&apos;t Be a Hoax</h1>
+            <h1 className="hero-h1-lg stellar-text">400,000 People Worked on Apollo — That&apos;s Why It Can&apos;t Be a Hoax</h1>
             <p className="text-2xl text-gray-100 font-light leading-relaxed">
               The largest peacetime workforce mobilization in human history. 400,000 people. 20,000 companies. 55+ years of silence — because there was nothing to hide.
             </p>

@@ -22,10 +22,10 @@ export default function EvidencePage() {
       
       <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="page-hero text-white py-12 px-4 pt-28">
+        <section className="page-hero text-white hero-section-lg px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Evidence Library</h1>
-            <p className="text-xl text-gray-200">
+            <h1 className="hero-h1-lg">Evidence Library</h1>
+            <p className="text-xl text-gray-200 page-subtitle">
               Comprehensive collection of scientific evidence and expert responses to conspiracy theories
             </p>
           </div>

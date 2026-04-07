@@ -94,9 +94,9 @@ export default function MoonRocksPage() {
 
       <main className="flex-1 bg-gray-50">
         {/* Hero Section */}
-        <section className="page-hero text-white py-16 px-4 pt-28">
+        <section className="page-hero text-white hero-section-lg px-4">
           <div className="page-hero-content max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">842 Pounds of Moon Rocks — Proof the Apollo Missions Were Real</h1>
+            <h1 className="hero-h1-lg">842 Pounds of Moon Rocks — Proof the Apollo Missions Were Real</h1>
             <p className="text-xl text-gray-200 leading-relaxed">
               Independently analyzed by scientists worldwide, including Cold War rivals. Every lab confirms the same thing: these rocks came from the moon.
             </p>

@@ -20,9 +20,9 @@ export default function DebateTipsPage() {
       <main className="flex-1 bg-gray-50">
 
         {/* Hero */}
-        <section className="page-hero text-white py-20 px-4 pt-28">
+        <section className="page-hero text-white hero-section-lg px-4">
           <div className="page-hero-content max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 stellar-text">How to Win a Moon Landing Debate</h1>
+            <h1 className="hero-h1-lg stellar-text">How to Win a Moon Landing Debate</h1>
             <p className="text-2xl text-gray-100 font-light leading-relaxed">
               Not by shouting louder. Not by burying them in links. By being the calmest, clearest, most credible voice in the room.
             </p>
