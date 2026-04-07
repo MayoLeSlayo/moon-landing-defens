@@ -4,6 +4,11 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
+echo "==> Stopping dev server if running..."
+pkill -f "next dev" 2>/dev/null && sleep 1 || true
+chmod -R u+w .next 2>/dev/null || true
+rm -rf .next
+
 echo "==> Building..."
 npm run build
 
